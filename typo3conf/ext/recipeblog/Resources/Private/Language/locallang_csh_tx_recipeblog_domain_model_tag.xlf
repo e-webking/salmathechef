@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-02-01T18:37:51Z" product-name="recipeblog">
+		<header/>
+		<body>
+			<trans-unit id="tx_recipeblog_domain_model_list">
+				<source>Recipe List</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_list.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tag.description">
+				<source>tag</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

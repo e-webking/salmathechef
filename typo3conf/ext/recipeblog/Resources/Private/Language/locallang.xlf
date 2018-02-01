@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-02-01T18:37:51Z" product-name="recipeblog">
+		<header/>
+		<body>
+			<trans-unit id="tx_recipeblog_domain_model_list">
+				<source>Recipe List</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_list.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_tag">
+				<source>Tag</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_tag.tag">
+				<source>Tag</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_category.icon">
+				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_amazonad">
+				<source>Amazonad</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_amazonad.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_amazonad.code">
+				<source>Code</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_ingredient">
+				<source>Ingredient</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_ingredient.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_ingredient.icon">
+				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe">
+				<source>Recipe</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.brief">
+				<source>Brief</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.yturl">
+				<source>Yturl</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.serves">
+				<source>Serves</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.uploadedon">
+				<source>Uploadedon</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.views">
+				<source>Views</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.likes">
+				<source>Likes</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.tags">
+				<source>Tags</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipe.amazonads">
+				<source>Amazonads</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_cookingstep">
+				<source>Cookingstep</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_cookingstep.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_cookingstep.detail">
+				<source>Detail</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_cookingstep.duration">
+				<source>Duration</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_cookingstep.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_cookingstep.recipe">
+				<source>Recipe</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipeingredient">
+				<source>Recipe Ingredient</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipeingredient.qty">
+				<source>Qty</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipeingredient.recipe">
+				<source>Recipe</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_recipeingredient.ingredient">
+				<source>Ingredient</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_comment.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_comment.comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_comment.upvotes">
+				<source>Upvotes</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_comment.downvotes">
+				<source>Downvotes</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_comment.recipe">
+				<source>Recipe</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

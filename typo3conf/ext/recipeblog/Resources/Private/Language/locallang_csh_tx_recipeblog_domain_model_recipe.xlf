@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-02-01T18:37:51Z" product-name="recipeblog">
+		<header/>
+		<body>
+			<trans-unit id="tx_recipeblog_domain_model_list">
+				<source>Recipe List</source>
+			</trans-unit>
+			<trans-unit id="tx_recipeblog_domain_model_list.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="brief.description">
+				<source>brief</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="yturl.description">
+				<source>yturl</source>
+			</trans-unit>
+			<trans-unit id="serves.description">
+				<source>serves</source>
+			</trans-unit>
+			<trans-unit id="uploadedon.description">
+				<source>uploadedon</source>
+			</trans-unit>
+			<trans-unit id="views.description">
+				<source>views</source>
+			</trans-unit>
+			<trans-unit id="likes.description">
+				<source>likes</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="tags.description">
+				<source>tags</source>
+			</trans-unit>
+			<trans-unit id="amazonads.description">
+				<source>amazonads</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

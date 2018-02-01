@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-recipeblog" >
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.title" />
+		</td>
+		<td>
+		{recipe.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.brief" />
+		</td>
+		<td>
+		{recipe.brief}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.image" />
+		</td>
+		<td>
+				<f:image src="{recipe.image.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.yturl" />
+		</td>
+		<td>
+		{recipe.yturl}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.serves" />
+		</td>
+		<td>
+		{recipe.serves}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.uploadedon" />
+		</td>
+		<td>
+		{recipe.uploadedon -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.views" />
+		</td>
+		<td>
+		{recipe.views}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_recipeblog_domain_model_recipe.likes" />
+		</td>
+		<td>
+		{recipe.likes}
+		</td>
+	</tr>
+</table>
+</html>
