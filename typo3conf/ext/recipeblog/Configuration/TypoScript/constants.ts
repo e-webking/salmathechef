@@ -12,4 +12,9 @@ plugin.tx_recipeblog_list {
     # cat=plugin.tx_recipeblog_list//a; type=string; label=Default storage PID
     storagePid =
   }
+  settings {
+        detailPid = 4
+  }
 }
+
+plugin.tx_recipeblog_banner < plugin.tx_recipeblog_list

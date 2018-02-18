@@ -1,0 +1,54 @@
+<div class="archive-item-media">   
+    <f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}" class="archive-item-media-thumbnail fader-activator" style="background-image:url({recipe.image.originalResource.publicUrl}); background-size: cover;">
+        <span class="image-fader"><span class="hover-icon-w"><i class="os-icon os-icon-plus"></i></span></span>
+    </f:link.action>
+</div>
+<div class="archive-item-content">
+    <header class="archive-item-header">
+        <h3 class="entry-title"><f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}">{recipe.title}</f:link.action></h3>
+    </header>
+    <div class="archive-item-meta">
+        <div class="archive-item-meta-cooking-time">
+             {f:translate(key:'tx_recipeblog_tpl.cookingtime')} {recipe.duration}
+        </div>
+        <div class="archive-item-meta-categories">
+            <ul class="post-categories">
+                
+            </ul>
+        </div>
+    </div>
+    <div class="archive-item-content-text">
+        {recipe.brief}
+    </div>
+    <div class="archive-item-author-meta">
+            <div class="author-avatar-w">
+                <f:image src="{f:uri.resource(path:'Images/author.png')}" width="96" height="96" alt="Salma Khatun" />
+            </div>
+            <div class="author-details">
+                <h4 class="author-name">{f:translate(key:'tx_recipeblog_tpl.salma')}</h4>
+                <div class="archive-item-date-posted"><f:format.date format="M d, Y">{recipe.uploadedon}</f:format.date></div>
+            </div>
+            <div class="archive-item-views-count-likes">
+                <a href="#" class="slide-button slide-like-button osetin-vote-trigger osetin-vote-not-voted" data-has-voted-label="Liked" data-not-voted-label="Like" data-post-id="177" data-vote-action="vote" data-votes-count="263">
+                <span class="slide-button-i">
+                    <i class="os-icon os-icon-thin-heart"></i>
+                    <span class="slide-button-label osetin-vote-action-label">{f:translate(key:'tx_recipeblog_tpl.like')}</span>
+                    <span class="slide-button-sub-label osetin-vote-count ">{recipe.likes}</span>
+                </span>
+                </a>
+            </div>
+    </div>
+    <div class="archive-item-deep-meta">
+            <div class="archive-item-rating-and-read-more">
+                <div class="archive-item-read-more-btn">
+                    <div class="read-more-link">
+                        <f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}">{f:translate(key:'tx_recipeblog_tpl.readmore')}</f:link.action>
+                    </div>
+                </div>
+            </div>
+            <div class="archive-item-comments">
+                <f:link.action pageUid="{settings.detailPid}" section="singlePostComments" action="show" pluginName="list" arguments="{recipe:recipe}"><i class="os-icon os-icon-thin-comment"></i> <span>{f:translate(key:'tx_recipeblog_tpl.comment')}</span></f:link.action>
+            </div>
+            <div class="archive-item-views-count"><i class="os-icon os-icon-eye"></i> <span>{recipe.views} {f:translate(key:'tx_recipeblog_tpl.views')}</span></div>
+    </div>
+</div>

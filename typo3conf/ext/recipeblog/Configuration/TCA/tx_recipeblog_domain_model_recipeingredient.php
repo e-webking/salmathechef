@@ -72,7 +72,7 @@ return [
                 'max' => 255,
             ],
         ],
-		'hidden' => [
+	'hidden' => [
             'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
             'config' => [
@@ -84,7 +84,7 @@ return [
                 ],
             ],
         ],
-		'starttime' => [
+	'starttime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
@@ -136,6 +136,7 @@ return [
 			    'type' => 'select',
 			    'renderType' => 'selectSingle',
 			    'foreign_table' => 'tx_recipeblog_domain_model_ingredient',
+                            'foreign_table_where' => ' ORDER BY title',
 			    'minitems' => 0,
 			    'maxitems' => 1,
 			],

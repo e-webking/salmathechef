@@ -1,0 +1,47 @@
+<div class="os-container hero-roll-w">
+    <div class="owl-carousel hero-posts-owl-slider">
+        <f:if condition="{recipes}">
+            <f:for each="{recipes}" as="recipe" iteration="rows">
+                <article class="archive-item any hero">
+                    <div class="archive-item-i">
+                        <div class="extra-styling-box"></div>
+                        <f:if condition="{rows.isFirst}">
+                            <f:then>
+                                <div class="archive-item-share-w active">
+                                    <div class="archive-item-share-trigger">
+                                        <div class="archive-item-share-plus"><i class="os-icon os-icon-plus"></i></div>
+                                        <div class="archive-item-share-label">Share</div>
+                                        <div class="archive-item-share-icons">
+                                            <a href="" target="_blank" class="archive-item-share-link aisl-facebook"><i class="os-icon os-icon-facebook"></i></a>
+                                            <a href="" target="_blank" class="archive-item-share-link aisl-twitter"><i class="os-icon os-icon-twitter"></i></a>
+                                            <a href="" target="_blank" class="archive-item-share-link aisl-pinterest"><i class="os-icon os-icon-pinterest"></i></a>
+                                            <a href="mailto:?Subject={recipe.title}&amp;Body=%20" target="_blank" class="archive-item-share-link aisl-mail"><i class="os-icon os-icon-basic-mail-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <f:render partial="Banner/Article" arguments="{_all}" />
+                                
+                            </f:then>
+                            <f:else>
+                                <div class="archive-item-share-w">
+                                    <div class="archive-item-share-trigger">
+                                        <div class="archive-item-share-plus"><i class="os-icon os-icon-plus"></i></div>
+                                        <div class="archive-item-share-label">Share</div>
+                                        <div class="archive-item-share-icons">
+                                            <a href="" target="_blank" class="archive-item-share-link aisl-facebook"><i class="os-icon os-icon-facebook"></i></a>
+                                            <a href="" target="_blank" class="archive-item-share-link aisl-twitter"><i class="os-icon os-icon-twitter"></i></a>
+                                            <a href="" target="_blank" class="archive-item-share-link aisl-pinterest"><i class="os-icon os-icon-pinterest"></i></a>
+                                            <a href="mailto:?Subject={recipe.title}&amp;Body=%20" target="_blank" class="archive-item-share-link aisl-mail"><i class="os-icon os-icon-basic-mail-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <f:render partial="Banner/Article" arguments="{_all}" />
+                            </f:else>
+                        </f:if>
+                        <div class="clear"></div>
+                    </div>
+                </article>
+            </f:for>
+        </f:if>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Select Recipes</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+         			<settings.recipes>
+                                    <TCEforms>
+                                            <label>Recipes</label>
+                                            <config>
+                                                    <type>group</type>
+                                                    <internal_type>db</internal_type>
+                                                    <allowed>tx_recipeblog_domain_model_recipe</allowed>
+                                                    <size>5</size>
+                                                    <maxitems>10</maxitems>
+                                                    <minitems>1</minitems>
+                                            </config>
+                                    </TCEforms>
+         			</settings.recipes>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

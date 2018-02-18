@@ -12,11 +12,32 @@ plugin.tx_recipeblog_list {
     storagePid = {$plugin.tx_recipeblog_list.persistence.storagePid}
     #recursive = 1
   }
+  settings {
+        detailPid = {$plugin.tx_recipeblog_list.settings.detailPid}
+  }
   features {
     #skipDefaultArguments = 1
   }
   mvc {
     #callDefaultActionIfActionCantBeResolved = 1
+  }
+}
+
+plugin.tx_recipeblog_banner {
+  view {
+    templateRootPaths.0 = EXT:recipeblog/Resources/Private/Templates/
+    templateRootPaths.1 = {$plugin.tx_recipeblog_banner.view.templateRootPath}
+    partialRootPaths.0 = EXT:recipeblog/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_recipeblog_banner.view.partialRootPath}
+    layoutRootPaths.0 = EXT:recipeblog/Resources/Private/Layouts/
+    layoutRootPaths.1 = {$plugin.tx_recipeblog_banner.view.layoutRootPath}
+  }
+  persistence {
+    storagePid = {$plugin.tx_recipeblog_banner.persistence.storagePid}
+    #recursive = 1
+  }
+  settings {
+        detailPid = {$plugin.tx_recipeblog_banner.settings.detailPid}
   }
 }
 

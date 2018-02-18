@@ -12,6 +12,8 @@ namespace ARM\Recipeblog\Controller;
  *
  ***/
 
+use \TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /**
  * RecipeController
  */
@@ -24,6 +26,19 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * @inject
      */
     protected $recipeRepository = null;
+    
+    /**
+     * @return void
+     */
+    public function bannerAction()
+    {
+        $recipeUids = $this->settings['recipes'];
+        $recipeUidArr = GeneralUtility::trimExplode(',', $recipeUids);
+        
+        $recipes = $this->recipeRepository->findByUids($recipeUidArr);
+        
+        $this->view->assign('recipes', $recipes);
+    }
 
     /**
      * action list

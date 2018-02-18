@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-02-01T18:37:51Z" product-name="recipeblog">
+	<file source-language="en" target-language="bn" datatype="plaintext" original="messages" date="2018-02-01T18:37:51Z" product-name="recipeblog">
 		<header/>
 		<body>
 			<trans-unit id="tx_recipeblog_domain_model_list">
@@ -128,22 +128,10 @@
 			</trans-unit>
                         
                         <trans-unit id="tx_recipeblog_tpl.cookingtime">
-				<source>Cooking Time:</source>
+                                <target>Cooking Time [BN]:</target>
 			</trans-unit>
                         <trans-unit id="tx_recipeblog_tpl.salma">
-				<source>Salma Khatun</source>
-			</trans-unit>
-                        <trans-unit id="tx_recipeblog_tpl.like">
-				<source>Like</source>
-			</trans-unit>
-                        <trans-unit id="tx_recipeblog_tpl.readmore">
-				<source>Read More</source>
-			</trans-unit>
-                        <trans-unit id="tx_recipeblog_tpl.comment">
-				<source>Comment</source>
-			</trans-unit>
-                        <trans-unit id="tx_recipeblog_tpl.views">
-				<source>Views</source>
+				<target>Salma Khatun [BN]</target>
 			</trans-unit>
 		</body>
 	</file>

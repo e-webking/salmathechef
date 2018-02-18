@@ -30,7 +30,16 @@ call_user_func(
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_recipeblog_domain_model_comment', 'EXT:recipeblog/Resources/Private/Language/locallang_csh_tx_recipeblog_domain_model_comment.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_recipeblog_domain_model_comment');
-
     },
     $_EXTKEY
 );
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        $_EXTKEY,
+        'banner',
+        'Banner Block'
+    );
+
+    $pluginSignature = str_replace('_', '', $_EXTKEY) . '_banner';
+    $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_banner.xml');
