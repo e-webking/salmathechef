@@ -1,0 +1,43 @@
+<f:layout name="website" />
+<f:section name="content">
+    <f:render partial="Header" arguments="{_all}"/>
+    <div class="os-container main-header-w main-header-version_1">
+        <div class="main-header color-scheme-light " style="background-color:#FFFFFF; ">
+            <div class="logo" style="width: 210px;">
+                <f:cObject typoscriptObjectPath="lib.logo" />
+            </div>
+            <div class="top-menu menu-activated-on-hover">
+                <ul id="header-menu" class="menu"><f:cObject typoscriptObjectPath="lib.mainmenu" /></ul>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-header-w color-scheme-light">
+        <div class="os-container">
+            <div class="fixed-header-i">
+                <div class="fixed-logo-w" style="width: 140px;">
+                    <f:cObject typoscriptObjectPath="lib.logo" />
+                </div>
+                <div class="fixed-top-menu-w menu-activated-on-hover">
+                    <ul id="fixed-header-menu" class="menu"><f:cObject typoscriptObjectPath="lib.mainmenu" /></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-header-w">
+        <div class="mobile-header-menu-w menu-activated-on-click color-scheme-dark">
+            <ul id="mobile-header-menu" class="menu"><f:cObject typoscriptObjectPath="lib.mainmenu" /></ul>
+        </div>
+        <div class="mobile-header">
+            <div class="mobile-menu-toggler">
+              <i class="os-icon os-icon-thin-hamburger"></i>
+            </div>
+            <div class="mobile-logo" style="width: 100px;">
+                <f:cObject typoscriptObjectPath="lib.logo" />
+            </div>
+            <div class="mobile-menu-search-toggler">
+                
+            </div>
+        </div>
+    </div>
+<f:cObject typoscriptObjectPath="lib.content.center" />
+</f:section>

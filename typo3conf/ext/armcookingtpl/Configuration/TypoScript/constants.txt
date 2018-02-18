@@ -1,0 +1,24 @@
+
+# cat = Template Settings//enable/a; type=string; label = baseURL
+baseUrl = http://typo3.local/salmathechef/
+
+# cat = Template Settings//enable/b; type=string; label = Main Root PID
+rootPID = 1
+
+# cat = Template Settings//enable/b; type=string; label = Bengali Root PID
+bengRootPID = 8
+
+# cat = Template Settings//enable/b; type=string; label = Nav menus
+menuItems = 3,10,11,12,13,14,15
+
+# cat= Template Settings//enable/d; type=string; label = Facebook URL
+fbUrl = https://www.facebook.com/salmathechef
+
+templatePath = EXT:armcookingtpl/
+plugin.tx_armcookingtpl {
+    view {
+        layoutRootPath = EXT:armcookingtpl/Resources/Private/Layouts/
+        partialRootPath = EXT:armcookingtpl/Resources/Private/Partials/
+        templateRootPath = EXT:armcookingtpl/Resources/Private/Templates/
+    }
+}

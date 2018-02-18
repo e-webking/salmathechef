@@ -1,0 +1,119 @@
+# page
+page = PAGE
+page.typeNum = 0
+
+
+config {
+  doctype = html5
+  doctype(
+<!doctype html>
+  )
+  baseURL = {$baseUrl}
+  absRefPrefix = {$baseUrl}
+  xhtml_cleaning = all
+  xmlprologue = none
+  metaCharset = utf-8
+  renderCharset = utf-8
+  additionalHeaders = Content-Type:text/html;charset=utf-8
+  simulateStaticDocuments = 0
+  prefixLocalAnchors = all
+  tx_realurl_enable = 0
+  linkVars = L
+  uniqueLinkVars = 1
+  
+  language = en
+  locale_all = en_EN.UTF-8
+  htmlTag_langKey = en-EN
+  sys_language_uid = 0
+  sys_language_overlay = 1
+  sys_language_mode = ignore
+  spamProtectEmailAddresses = 1
+  index_enable = 1
+  index_externals = 1
+  jQueryNoConflict = 1
+  useCacheHash = 0
+  disablePrefixComment = 1
+  disableImgBorderAttr = 1
+  noPageTitle = 2
+  
+  #concatenateCss = 1
+  #compressJs = 1
+  #compressCss = 1
+  removeDefaultCss = 1
+  cache_period = 86400
+  sendCacheHeaders = 1
+  #moveJsFromHeaderToFooter = 1
+}
+
+## Meta
+page.meta {
+  viewport = width=device-width, initial-scale=1
+  abstract.field = abstract
+  description.field = description
+  keywords.field = keywords
+  google = notranslate
+  msapplication-tap-highlight = no
+}
+
+page.headerData.5 = TEXT
+page.headerData.5.field = title
+page.headerData.5.wrap = <title>|</title>
+page.shortcutIcon = typo3conf/ext/armcookingtpl/Resources/Public/assets/favicon.ico
+
+page.headerData.10 = TEXT
+page.headerData.10.value (
+<!-- Fonts -->
+<link rel='stylesheet' id='fonts-css'  href='https://fonts.googleapis.com/css?family=Domine%3A400%2C700' type='text/css' media='all' />
+<link rel='stylesheet' id='google-font-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic%7CYanone+Kaffeesatz' type='text/css' media='all' />
+)
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+  file = {$templatePath}Resources/Private/Templates/main.html
+  layoutRootPath = {$plugin.tx_armcookingtpl.view.layoutRootPath}
+  partialRootPath = {$plugin.tx_armcookingtpl.view.partialRootPath}
+	
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+        key.field = backend_layout
+        key.ifEmpty.data = levelfield:-1, backend_layout_next_level, slide
+
+        # Default Template
+        default = TEXT
+        default.value = {$templatePath}Resources/Private/Templates/main.html
+
+        # Home Template
+        1 = TEXT
+        1.value = {$templatePath}Resources/Private/Templates/main.html
+    }
+    variables {
+        rootPage = {$rootPage}
+        fbUrl = {$fbUrl}
+    }
+}
+## Body Class
+page.bodyTag = <body class="page-template dropdown-menu-rounded-corners dropdown-menu-color-scheme-light" style="background-image:url(typo3conf/ext/armcookingtpl/Resources/Public/images/bg3.jpg); background-repeat: repeat; background-position: top center;background-size: cover;">
+
+## Include CSS
+page.includeCSS {
+    file10 = {$templatePath}Resources/Public/css/icons.css
+    file11 = {$templatePath}Resources/Public/assets/slick/slick.css
+    file12 = {$templatePath}Resources/Public/assets/perfect-scrollbar/perfect-scrollbar.min.css
+    file13 = {$templatePath}Resources/Public/css/fontawesome.css
+    file14 = {$templatePath}Resources/Public/assets/lib/owl.carousel.css
+    file15 = {$templatePath}Resources/Public/css/main.css
+    file16 = {$templatePath}Resources/Public/css/style.css
+}
+page.includeJS{
+    file10  = {$templatePath}Resources/Public/js/jquery/jquery.js
+    file11  = {$templatePath}Resources/Public/assets/slick/slick.js
+    file12  = {$templatePath}Resources/Public/assets/perfect-scrollbar/perfect-scrollbar.jquery.min.js
+}
+page.includeJSFooter{
+    file10  = {$templatePath}Resources/Public/assets/lib/jquery.plugin.min.js
+    file11  = {$templatePath}Resources/Public/assets/lib/jquery.countdown.min.js
+    file12  = {$templatePath}Resources/Public/assets/lib/isotope.pkgd.min.js
+    file13  = {$templatePath}Resources/Public/assets/lib/packery-mode.pkgd.min.js
+    file14  = {$templatePath}Resources/Public/assets/lib/owl.carousel.min.js
+    file15  = {$templatePath}Resources/Public/js/functions.js
+}

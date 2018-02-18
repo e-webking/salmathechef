@@ -1,0 +1,66 @@
+# Home link
+lib.engHome = COA
+lib.engHome {
+    10 = TEXT
+    10 {
+        value = English
+        typolink.parameter = {$rootPID}
+        typolink.ATagParams = title="English Home"
+    }
+    wrap = <li>|</li>
+}
+lib.bengHome = COA
+lib.bengHome {
+    10 = TEXT
+    10 {
+        value = Bengali
+        typolink.parameter = {$bengRootPID}
+        typolink.ATagParams = title="Bengali Home"
+    }
+    wrap = <li>|</li>
+}
+
+# Main menu
+lib.mainmenu = HMENU
+lib.mainmenu {
+    special = list
+    special.value = {$menuItems}
+    wrap = |
+    1 = TMENU
+    1 {
+        expAll = 1
+        noBlur = 1
+        NO = 1
+        NO.ATagTitle.field = navtitle // title
+        NO.wrapItemAndSub = <li class="menu-item menu-item-type-custom menu-item-object-custom">|</li>
+
+        ACT = 1
+        ACT < .NO
+        ACT.wrapItemAndSub = <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor">|</li>
+
+        CUR = 1
+        CUR < .ACT
+
+        IFSUB = 1
+        IFSUB.wrapItemAndSub = <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children">|</li>
+
+        ACTIFSUB < .IFSUB
+        ACTIFSUB {
+            wrapItemAndSub = <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children">|</li>
+        }
+
+        CURIFSUB < .ACTIFSUB
+    }
+
+    2 = TMENU
+    2 {
+        expAll = 1
+    
+        NO.allWrap = <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item">|</li>
+        NO.ATagTitle.field = navtitle // title
+        ACT = 1
+        ACT < .NO
+        ACT.wrapItemAndSub = <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item">|</li>
+   	wrap = <ul class="sub-menu">|</ul>
+    }
+}

@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'mealPlanner';
+  src: url('../assets/fonts/osfont.eot');
+  src: url('../assets/fonts/osfont.eot') format('embedded-opentype'),url('../assets/fonts/osfont.woff') format('woff'),url('../assets/fonts/osfont.woff2') format('woff2'),url('../assets/fonts/osfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="mp-icon-"], [class*=" mp-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mealPlanner' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mp-icon-ui-36:before {
+  content: "\e913";
+}
+.mp-icon-ui-35:before {
+  content: "\e914";
+}
+.mp-icon-ui-07:before {
+  content: "\e911";
+}
+.mp-icon-others-45:before {
+  content: "\e912";
+}
+.mp-icon-ui-83:before {
+  content: "\e90d";
+}
+.mp-icon-ui-88:before {
+  content: "\e90e";
+}
+.mp-icon-ui-22:before {
+  content: "\e90f";
+}
+.mp-icon-documents-15:before {
+  content: "\e910";
+}
+.mp-icon-arrow-down:before {
+  content: "\e908";
+}
+.mp-icon-arrow-up:before {
+  content: "\e909";
+}
+.mp-icon-minus:before {
+  content: "\e905";
+}
+.mp-icon-minus-circle:before {
+  content: "\e906";
+}
+.mp-icon-minus-circle2:before {
+  content: "\e907";
+}
+.mp-icon-arrow-right:before {
+  content: "\e900";
+}
+.mp-icon-arrow-left:before {
+  content: "\e901";
+}
+.mp-icon-arrow-right2:before {
+  content: "\e902";
+}
+.mp-icon-arrow-left2:before {
+  content: "\e903";
+}
+.mp-icon-cross:before {
+  content: "\e904";
+}
+.mp-icon-marquee-plus:before {
+  content: "\e90a";
+}
+.mp-icon-square-plus:before {
+  content: "\e90b";
+}
+.mp-icon-file-add:before {
+  content: "\e90c";
+}
