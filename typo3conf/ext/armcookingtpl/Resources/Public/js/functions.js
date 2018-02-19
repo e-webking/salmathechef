@@ -349,6 +349,7 @@
       $hero_owl.owlCarousel({
         items: 1,
         loop: looped,
+        autoplay: looped,
         nav: true,
         dots: true,
         navText : ['<i class="os-icon os-icon-chevron-left"></i>', '<i class="os-icon os-icon-chevron-right"></i>']
@@ -451,18 +452,6 @@
       $elem.toggleClass('active');
       return false;
     });
-
-    // $('.top-menu .sub-menu li.menu-item-has-children, .fixed-top-menu-w .sub-menu li.menu-item-has-children').on('mouseenter', function(event){
-    //   var $elem = $(this).closest('li');
-    //   $elem.addClass('active');
-    //   return false;
-    // });
-    // $('.top-menu .sub-menu li.menu-item-has-children, .fixed-top-menu-w .sub-menu li.menu-item-has-children').on('mouseleave', function(event){
-    //   var $elem = $(this).closest('li');
-    //   $elem.removeClass('active');
-    //   return false;
-    // });
-
 
     // SHARE POST LINK
     $('.post-control-share, .single-panel .psb-close').on('click', function(){

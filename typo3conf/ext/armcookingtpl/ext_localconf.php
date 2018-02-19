@@ -9,4 +9,4 @@ if (!is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY])) {
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/Tsconfig/pageTSConfig.txt">');
 
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['armtemplate_preset'] = 'EXT:armcookingtpl/Configuration/RTE/Default.yaml';
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['tpl_preset'] = 'EXT:armcookingtpl/Configuration/RTE/Default.yaml';
