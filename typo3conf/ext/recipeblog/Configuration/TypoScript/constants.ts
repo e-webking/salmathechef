@@ -10,10 +10,11 @@ plugin.tx_recipeblog_list {
   }
   persistence {
     # cat=plugin.tx_recipeblog_list//a; type=string; label=Default storage PID
-    storagePid =
+    storagePid = 6
   }
   settings {
         detailPid = 4
+        searchPid = 32
   }
 }
 

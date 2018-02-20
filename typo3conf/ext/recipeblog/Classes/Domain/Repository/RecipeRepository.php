@@ -17,20 +17,12 @@ namespace ARM\Recipeblog\Domain\Repository;
  */
 class RecipeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
     /**
-     * Ignore storage pid for feusers
+     * defaultOrderings
+     *
+     * @var array
      */
-    public function initializeObject() {
-
-           /**
-            * @var $querySettings \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings
-            */
-           $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
-           // don't add the pid constraint
-           $querySettings->setIgnoreEnableFields(TRUE);
-           $this->setDefaultQuerySettings($querySettings);
-    }
+    protected $defaultOrderings = array("uploadedon"=> \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING);
     
     /**
      * 
@@ -50,7 +42,22 @@ class RecipeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $query->setOrderings(
             array('uploadedon' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)
         );
-       
+        
+        return $query->execute();
+    }
+    
+    /**
+     * 
+     * @param int $limit
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function getPopular($limit=3) {
+        
+        $query = $this->createQuery();
+        $query->setLimit($limit);
+        $query->setOrderings(
+            array('views' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)
+        );
         
         return $query->execute();
     }

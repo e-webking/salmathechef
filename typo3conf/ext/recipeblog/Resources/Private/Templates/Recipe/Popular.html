@@ -1,0 +1,22 @@
+<h3 class="widget-title"><span>{f:translate(key:'tx_recipeblog_tpl.popularrecipe')}</span></h3>
+<div class="tptn_posts  tptn_posts_widget">
+    <f:if condition="{recipes}">
+        <ul>
+            <f:for each="{recipes}" as="recipe" iteration="rows">
+                <li>
+                <f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}" class="tptn_link">
+                    <f:image src="{recipe.image.originalResource.publicUrl}" width="85" />
+                </f:link.action>
+                <span class="tptn_after_thumb">
+                    <f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}" class="tptn_link">
+                        <span class="tptn_title">{recipe.title}</span>
+                    </f:link.action>
+                    <span class="tptn_excerpt">
+                        <f:format.crop maxCharacters="70">{recipe.brief}</f:format.crop>
+                    </span>
+                </span>
+            </li>
+            </f:for>
+        </ul>
+    </f:if>
+</div>

@@ -145,6 +145,15 @@
                         <trans-unit id="tx_recipeblog_tpl.views">
 				<source>Views</source>
 			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.categories">
+				<source>Categories</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.popularrecipe">
+				<source>Popular Recipes</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.populartags">
+				<source>Popular Tags</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

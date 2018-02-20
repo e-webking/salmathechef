@@ -1,0 +1,10 @@
+<h3 class="widget-title"><span>{f:translate(key:'tx_recipeblog_tpl.populartags')}</span></h3>
+<div class="tagcloud">
+<f:if condition="{tags}">
+    <f:for each="{tags}" as="tag" iteration="rows">
+        <f:link.action pageUid="{settings.searchPid}" action="search" pluginName="search" arguments="{tag:tag.uid}" class="tag-cloud-link" style="font-size: 15.777pt;">
+            {tag.tag}
+        </f:link.action>
+    </f:for>
+</f:if>
+</div>

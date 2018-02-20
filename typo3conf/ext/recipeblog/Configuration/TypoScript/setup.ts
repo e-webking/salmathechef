@@ -14,6 +14,7 @@ plugin.tx_recipeblog_list {
   }
   settings {
         detailPid = {$plugin.tx_recipeblog_list.settings.detailPid}
+        searchPid = {$plugin.tx_recipeblog_list.settings.searchPid}
   }
   features {
     #skipDefaultArguments = 1
@@ -41,35 +42,7 @@ plugin.tx_recipeblog_banner {
   }
 }
 
-plugin.tx_recipeblog._CSS_DEFAULT_STYLE (
-    textarea.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-
-    input.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-
-    .tx-recipeblog table {
-        border-collapse:separate;
-        border-spacing:10px;
-    }
-
-    .tx-recipeblog table th {
-        font-weight:bold;
-    }
-
-    .tx-recipeblog table td {
-        vertical-align:top;
-    }
-
-    .typo3-messages .message-error {
-        color:red;
-    }
-
-    .typo3-messages .message-ok {
-        color:green;
-    }
-)
+plugin.tx_recipeblog_category < plugin.tx_recipeblog_list
+plugin.tx_recipeblog_popular < plugin.tx_recipeblog_list
+plugin.tx_recipeblog_tags < plugin.tx_recipeblog_list
+plugin.tx_recipeblog_search < plugin.tx_recipeblog_list

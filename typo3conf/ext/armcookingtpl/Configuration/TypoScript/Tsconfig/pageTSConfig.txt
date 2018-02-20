@@ -10,6 +10,8 @@ TCEFORM {
             addItems {
                 100 = Aside
                 101 = Aside [with ribbon]
+                102 = Aside [with ribbon list]
+                103 = Aside [with ribbon Tag cloud]
             }
         }
     }

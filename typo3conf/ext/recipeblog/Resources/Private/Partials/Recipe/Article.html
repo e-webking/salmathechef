@@ -1,0 +1,58 @@
+{namespace arm=ARM\Recipeblog\ViewHelpers}
+<article class="archive-item any full_full">
+    <div class="archive-item-i">
+        <div class="extra-styling-box"></div>
+        <div class="archive-item-share-w active">
+            <div class="archive-item-share-trigger">
+                <div class="archive-item-share-plus"><i class="os-icon os-icon-plus"></i></div>
+                <div class="archive-item-share-label">Share</div>
+                <div class="archive-item-share-icons">
+                    <a href="<arm:socialLink social='facebook' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-facebook"><i class="os-icon os-icon-facebook"></i></a>
+                    <a href="<arm:socialLink social='twitter' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-twitter"><i class="os-icon os-icon-twitter"></i></a>
+                    <a href="<arm:socialLink social='pin' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-pinterest"><i class="os-icon os-icon-pinterest"></i></a>
+                    <a href="<arm:socialLink social='gplus' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-mail"><i class="os-icon os-icon-social-google-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="archive-item-media">
+            <f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}" class="archive-item-media-thumbnail fader-activator" style="background-image:url({recipe.image.originalResource.publicUrl}); background-size: cover;">
+                <span class="image-fader"><span class="hover-icon-w"><i class="os-icon os-icon-plus"></i></span></span>
+            </f:link.action>
+        </div>
+        <div class="archive-item-content">
+            <header class="archive-item-header">
+                <h3 class="entry-title"><f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}">{recipe.title}</f:link.action></h3>
+            </header>
+            <div class="archive-item-meta">
+                <div class="archive-item-meta-cooking-time">
+                     {f:translate(key:'tx_recipeblog_tpl.cookingtime')} {recipe.duration}
+                </div>
+                <div class="archive-item-meta-categories">
+                    <ul class="post-categories">
+                        <li><f:link.action pageUid="{settings.searchPid}" action="search" pluginName="search" arguments="{category:recipe.category}">{recipe.category.title}</f:link.action></li>
+                    <f:for each="{recipe.tags}" as="tag">
+                        <li><f:link.action pageUid="{settings.searchPid}" action="search" pluginName="search" arguments="{tag:tag.uid}">{tag.tag}</f:link.action></li>
+                    </f:for>
+                    </ul>
+                </div>
+            </div>
+            <div class="archive-item-content-text">
+                {recipe.brief}
+            </div>
+            <div class="archive-item-deep-meta">
+                    <div class="archive-item-rating-and-read-more">
+                        <div class="archive-item-read-more-btn">
+                            <div class="read-more-link">
+                                <f:link.action pageUid="{settings.detailPid}" action="show" pluginName="list" arguments="{recipe:recipe}">{f:translate(key:'tx_recipeblog_tpl.readmore')}</f:link.action>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="archive-item-comments">
+                        <f:link.action pageUid="{settings.detailPid}" section="singlePostComments" action="show" pluginName="list" arguments="{recipe:recipe}"><i class="os-icon os-icon-thin-comment"></i> <span>{f:translate(key:'tx_recipeblog_tpl.comment')}</span></f:link.action>
+                    </div>
+                    <div class="archive-item-views-count"><i class="os-icon os-icon-eye"></i> <span>{recipe.views} {f:translate(key:'tx_recipeblog_tpl.views')}</span></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</article>

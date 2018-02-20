@@ -33,9 +33,12 @@ tt_content.stdWrap.innerWrap.cObject {
   key.field = frame_class 
   100 = TEXT
   100.value = <aside class="widget">|</aside>
-
   101 = TEXT
   101.value = <aside class="widget with-ribbon">|</aside>
+  102 = TEXT
+  102.value = <aside class="widget with-ribbon tptn_posts_list_widget">|</aside>
+  103 = TEXT
+  103.value = <aside class="widget with-ribbon widget_tag_cloud">|</aside>
 }
 
 ## Content - Begin

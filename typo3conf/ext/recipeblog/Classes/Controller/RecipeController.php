@@ -28,6 +28,21 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     protected $recipeRepository = null;
     
     /**
+     *
+     * @var \ARM\Recipeblog\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository = null;
+    
+    /**
+     *
+     * @var \ARM\Recipeblog\Domain\Repository\TagRepository
+     * @inject
+     */
+    protected $tagRepository = null;
+
+
+    /**
      * @return void
      */
     public function bannerAction()
@@ -39,7 +54,40 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
         
         $this->view->assign('recipes', $recipes);
     }
+    
+    /**
+     * 
+     */
+    public function categoryAction() {
+        $categories = $this->categoryRepository->findAll();
+        $this->view->assign('categories', $categories);
+    }
+    
+    
+    /**
+     * 
+     */
+    public function popularAction() {
+        $recipes = $this->recipeRepository->getPopular();
+        $this->view->assign('recipes', $recipes);
+    }
 
+    /**
+     * 
+     */
+    public function tagsAction() {
+        
+        $tags = $this->tagRepository->findAll();
+        $this->view->assign('tags', $tags);
+    }
+    
+    /**
+     * 
+     */
+    public function searchAction() {
+        
+    }
+    
     /**
      * action list
      *

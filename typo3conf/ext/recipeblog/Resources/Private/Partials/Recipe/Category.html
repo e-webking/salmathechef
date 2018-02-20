@@ -1,0 +1,12 @@
+<div class="sci-media">
+    <f:if condition="{category.icon}">
+    <f:link.action pageUid="{settings.searchPid}" action="search" pluginName="search" arguments="{category:category.uid}">
+        <f:image src="{category.icon.uid}" treatIdAsReference="1" />
+    </f:link.action>
+    </f:if>
+</div>
+<div class="sci-title">
+    <h3><f:link.action pageUid="{settings.searchPid}" action="search" pluginName="search" arguments="{category:category.uid}">
+        {category.title}
+    </f:link.action></h3>
+</div>

@@ -16,6 +16,42 @@ call_user_func(
                 'Recipe' => 'banner'
             ]
         );
+        
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'ARM.Recipeblog',
+            'Category',
+            [
+                'Recipe' => 'category'
+            ],
+            // non-cacheable actions
+            [
+                'Recipe' => 'category'
+            ]
+        );
+        
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'ARM.Recipeblog',
+            'Popular',
+            [
+                'Recipe' => 'popular'
+            ],
+            // non-cacheable actions
+            [
+                'Recipe' => 'popular'
+            ]
+        );
+        
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'ARM.Recipeblog',
+            'Tags',
+            [
+                'Recipe' => 'tags'
+            ],
+            // non-cacheable actions
+            [
+                'Recipe' => 'tags'
+            ]
+        );
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'ARM.Recipeblog',
@@ -26,6 +62,17 @@ call_user_func(
             // non-cacheable actions
             [
                 'Recipe' => 'list, show'
+            ]
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'ARM.Recipeblog',
+            'Search',
+            [
+                'Recipe' => 'search'
+            ],
+            // non-cacheable actions
+            [
+                'Recipe' => 'search'
             ]
         );
 

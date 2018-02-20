@@ -48,6 +48,9 @@ class SocialLinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
                     $return .= '&#038;media='.$image; 
                 }
                 break;
+            case 'gplus':
+                $return = 'https://plus.google.com/share?url=' . $url . '&amp;title='.$text; 
+                break;
             case 'email':
                 $return = 'mailto:?Subject='.$text.'&amp;Body=Check this wonderful recipe "'.$text.'" at '.$url;
                 break;

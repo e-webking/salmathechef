@@ -1,0 +1,18 @@
+<h3 class="widget-title"><span>{f:translate(key:'tx_recipeblog_tpl.categories')}</span></h3>
+<div class="shortcode-categories-icons">
+    <table>
+        <tbody>
+        <f:if condition="{categories}">
+            <tr>
+            <f:for each="{categories}" as="category" iteration="rows">
+                <td><f:render partial="Recipe/Category" arguments="{_all}" /></td>
+                <f:if condition="{rows.isEven}">
+                </tr>
+                <tr>
+                </f:if>
+            </f:for>
+            </tr>
+        </f:if>
+        </tbody>
+    </table>
+</div>

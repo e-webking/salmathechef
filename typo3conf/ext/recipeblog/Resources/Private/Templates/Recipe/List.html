@@ -1,52 +1,7 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-
-This Template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
-<f:section name="main">
-<h1>Listing for Recipe</h1>
-
-<f:flashMessages />
-
-<table  class="tx_recipeblog" >
-	<tr>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.title" /></th>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.brief" /></th>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.image" /></th>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.yturl" /></th>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.serves" /></th>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.uploadedon" /></th>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.views" /></th>
-		<th><f:translate key="tx_recipeblog_domain_model_recipe.likes" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
-	<f:for each="{recipes}" as="recipe">
-		<tr>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.title}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.brief}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.image.originalResource.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.yturl}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.serves}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.uploadedon -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.views}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.likes}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{recipe : recipe}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{recipe : recipe}">Delete</f:link.action></td>
-		</tr>
-	</f:for>
-</table>
-
-<f:link.action action="new">New Recipe</f:link.action>
-</f:section>
-</html>
+<f:if condition="{recipes}">
+    <f:for each="{recipes}" as="recipe">
+        <div class="masonry-item any third">
+            <f:render partial="Recipe/Article" arguments="{_all}" />
+        </div>
+    </f:for>
+</f:if>
