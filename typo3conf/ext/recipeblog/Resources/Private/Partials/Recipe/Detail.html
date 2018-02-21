@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li class="single-meta-views">
-                <span>{recipe.views}</span>
+                <span>{recipe.views} Views</span>
             </li>
             <li class="single-meta-likes">
                 <f:link.action action="like" arguments="{recipe:recipe}" class="slide-button slide-like-button osetin-vote-trigger osetin-vote-not-voted">
@@ -183,8 +183,52 @@
                 </table>
             </div>
         </div>
+        <div class="single-post-about-author">
+            <div class="author-avatar-w">
+                <f:image src="{f:uri.resource(path:'Images/author.png')}" width="96" height="96" alt="Salma Khatun" />
+            </div>
+            <div class="author-details">
+                <h3 class="author-name">{f:translate(key:'tx_recipeblog_tpl.salma')}</h3>
+                <div class="archive-item-date-posted"><f:format.date format="M d, Y">{recipe.uploadedon}</f:format.date></div>
+                <p>{f:translate(key:'tx_recipeblog_tpl.aboutme')}</p>
+                <div class="author-social-links">
+                    <a href="{settings.gplus}" class="profile-url"><i class="os-icon os-icon-social-googleplus"></i></a>
+                    <a href="{settings.twitter}" class="profile-url"><i class="os-icon os-icon-social-twitter"></i></a>
+                    <a href="{settings.facebook}" class="profile-url"><i class="os-icon os-icon-social-facebook"></i></a>
+                    <a href="{settings.instagram}" class="profile-url"><i class="os-icon os-icon-social-instagram"></i></a>
+                    <a href="{settings.stumble}" class="profile-url"><i class="os-icon os-icon-social-stumbleupon"></i></a>
+                </div>
+                </div>
+            </div>
+            
+            
+        </div>
     </div>
 </div>
+
+<!-- Related recipes -->
+<f:if condition="{relatedrecipes}">
+<div class="os-container">
+    <div class="related-recipes-w" style="background-image:url({f:uri.resource(path:'Images/relatedbg.jpg')}); background-repeat: repeat;">
+        <div class="related-recipes-heading">
+            <h2 class="bordered-title"><span>{f:translate(key:'tx_recipeblog_tpl.relatedrecipes')}</span></h2>
+        </div>
+        <ul class="related-recipes">
+            <f:for each="{relatedrecipes}" as="related">
+                <li>
+                    <f:link.page pageUid="{related.pageuid}" class="fader-activator">
+                      <figure>
+                          <f:image src="{related.image.uid}" width="400c" height="400" treatIdAsReference="1" class="attachment-osetin-medium-square-thumbnail size-osetin-medium-square-thumbnail t3-image" />
+                          <span class="image-fader"><span class="hover-icon-w"><i class="os-icon os-icon-plus"></i></span></span>
+                      </figure>
+                      <span>{related.title}</span>
+                    </f:link.page>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</div>
+</f:if>
 <!-- User comment section -->
 <div class="os-container">
     <div class="single-post-comments-w with-ads">

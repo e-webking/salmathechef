@@ -16,6 +16,11 @@ plugin.tx_recipeblog_list {
         detailPid = {$plugin.tx_recipeblog_list.settings.detailPid}
         searchPid = {$plugin.tx_recipeblog_list.settings.searchPid}
         homePid = {$plugin.tx_recipeblog_list.settings.homePid}
+        gplus = https://plus.google.com/117867866037937115341
+        twitter = https://www.twitter.com/salmathechef/
+        facebook = https://www.facebook.com/salmathechef/
+        instagram = https://www.instagram.com/salmathechef/
+        stumble = https://www.stumbleupon.com/stumbler/skhatun62
   }
   features {
     #skipDefaultArguments = 1

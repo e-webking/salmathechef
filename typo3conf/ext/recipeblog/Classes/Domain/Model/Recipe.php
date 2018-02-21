@@ -23,6 +23,12 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $title = '';
+    
+    /**
+     *
+     * @var int
+     */
+    protected $pageuid = 0;
 
     /**
      * brief
@@ -160,6 +166,27 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+    
+    /**
+     * Returns the pageuid
+     *
+     * @return int $pageuid
+     */
+    public function getPageuid()
+    {
+        return $this->pageuid;
+    }
+
+    /**
+     * Sets the pageuid
+     *
+     * @param int $pageuid
+     * @return void
+     */
+    public function setPageuid($pageuid)
+    {
+        $this->pageuid = $pageuid;
     }
 
     /**

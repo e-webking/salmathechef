@@ -172,6 +172,12 @@
                         <trans-unit id="tx_recipeblog_tpl.steps">
 				<source>Steps</source>
 			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.aboutme">
+				<source>I love cooking and gardening. I am a YouTuber and runs the channel SalmaTheChef!</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.relatedrecipes">
+				<source>Related Recipes:</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

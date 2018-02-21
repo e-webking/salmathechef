@@ -107,7 +107,28 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function showAction(\ARM\Recipeblog\Domain\Model\Recipe $recipe)
     {
+        $views = $recipe->getViews();
+        $recipe->setViews(++$views);
+        $this->recipeRepository->update($recipe);
+        $category = $recipe->getCategory();
+        $relatedrecipes = $this->recipeRepository->findRelated($category->getUid(), $recipe->getUid());
         $this->view->assign('recipe', $recipe);
+        $this->view->assign('relatedrecipes', $relatedrecipes);
+    }
+    
+    /**
+     * action like
+     *
+     * @param \ARM\Recipeblog\Domain\Model\Recipe $recipe
+     * @return void
+     */
+    public function likeAction(\ARM\Recipeblog\Domain\Model\Recipe $recipe)
+    {
+        $likes = $recipe->getLikes();
+        $recipe->setLikes(++$likes);
+        $this->recipeRepository->update($recipe);
+        
+        $this->redirect('show',NULL,NULL,array('recipe' => $recipe));
     }
     
     /**
@@ -117,7 +138,10 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     {
         $recipeUid = $this->settings['recipe'];
         $recipe = $this->recipeRepository->findByUid(intval($recipeUid));
+        $category = $recipe->getCategory();
+        $relatedrecipes = $this->recipeRepository->findRelated($category->getUid(), $recipe->getUid());
         
         $this->view->assign('recipe', $recipe);
+        $this->view->assign('relatedrecipes', $relatedrecipes);
     }
 }

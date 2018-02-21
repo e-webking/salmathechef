@@ -25,7 +25,7 @@ class SocialLinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
     public function render($social, $pageuid, $recipe, $text=NULL, $image=NULL) {
         $objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Extbase\Object\ObjectManager::class );
         $uriBuilder = $objectManager->get( \TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder::class );
-        $url = urlencode($uriBuilder->setArgumentPrefix('tx_armrecipeblog_list')
+        $url = urlencode($uriBuilder->setArgumentPrefix('tx_recipeblog_list')
                     ->setCreateAbsoluteUri(TRUE)
                     ->setUseCacheHash(FALSE)
                     ->setTargetPageUid($pageuid)
@@ -55,7 +55,7 @@ class SocialLinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
                 $return = 'mailto:?Subject='.$text.'&amp;Body=Check this wonderful recipe "'.$text.'" at '.$url;
                 break;
             case 'url':
-                $return = $url;
+                $return = urldecode($url);
                 break;
         }
         

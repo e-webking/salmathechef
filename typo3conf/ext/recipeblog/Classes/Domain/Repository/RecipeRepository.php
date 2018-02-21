@@ -48,6 +48,28 @@ class RecipeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     
     /**
      * 
+     * @param int $category
+     * @param int $recipe
+     */
+    public function findRelated($category,$recipe) {
+        
+        $query = $this->createQuery();
+        $query->setLimit(5);
+        $constraints = array();
+        $constraints[] = $query->equals('category', $category);
+        $constraints[] = $query->equals('hidden', 0);
+        $constraints[] = $query->logicalNot($query->equals('uid', $recipe));
+        $query->matching($query->logicalAnd($constraints));
+        
+        $query->setOrderings(
+            array('uploadedon' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)
+        );
+        
+        return $query->execute();
+    }
+    
+    /**
+     * 
      * @param int $limit
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */

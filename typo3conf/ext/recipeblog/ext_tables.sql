@@ -92,6 +92,7 @@ CREATE TABLE tx_recipeblog_domain_model_recipe (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
+        pageuid int(11) DEFAULT '0' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
 	brief text NOT NULL,
         duration varchar(255) DEFAULT '' NOT NULL,

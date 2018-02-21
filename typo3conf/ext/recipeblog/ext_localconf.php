@@ -57,11 +57,11 @@ call_user_func(
             'ARM.Recipeblog',
             'List',
             [
-                'Recipe' => 'list, show'
+                'Recipe' => 'list, show, like'
             ],
             // non-cacheable actions
             [
-                'Recipe' => 'list, show'
+                'Recipe' => 'list, show, like'
             ]
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
