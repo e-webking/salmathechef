@@ -109,4 +109,15 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     {
         $this->view->assign('recipe', $recipe);
     }
+    
+    /**
+     * @return void
+     */
+    public function singleAction()
+    {
+        $recipeUid = $this->settings['recipe'];
+        $recipe = $this->recipeRepository->findByUid(intval($recipeUid));
+        
+        $this->view->assign('recipe', $recipe);
+    }
 }

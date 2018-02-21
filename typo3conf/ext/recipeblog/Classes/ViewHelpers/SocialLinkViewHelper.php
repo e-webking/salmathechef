@@ -54,6 +54,9 @@ class SocialLinkViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractView
             case 'email':
                 $return = 'mailto:?Subject='.$text.'&amp;Body=Check this wonderful recipe "'.$text.'" at '.$url;
                 break;
+            case 'url':
+                $return = $url;
+                break;
         }
         
         return $return;

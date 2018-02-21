@@ -15,6 +15,7 @@ plugin.tx_recipeblog_list {
   settings {
         detailPid = {$plugin.tx_recipeblog_list.settings.detailPid}
         searchPid = {$plugin.tx_recipeblog_list.settings.searchPid}
+        homePid = {$plugin.tx_recipeblog_list.settings.homePid}
   }
   features {
     #skipDefaultArguments = 1
@@ -46,3 +47,4 @@ plugin.tx_recipeblog_category < plugin.tx_recipeblog_list
 plugin.tx_recipeblog_popular < plugin.tx_recipeblog_list
 plugin.tx_recipeblog_tags < plugin.tx_recipeblog_list
 plugin.tx_recipeblog_search < plugin.tx_recipeblog_list
+plugin.tx_recipeblog_single < plugin.tx_recipeblog_list

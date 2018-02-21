@@ -85,10 +85,23 @@ page.10 {
         # Home Template
         1 = TEXT
         1.value = {$templatePath}Resources/Private/Templates/main.html
+
+         # Home Template
+        2 = TEXT
+        2.value = {$templatePath}Resources/Private/Templates/single.html
     }
     variables {
-        rootPage = {$rootPage}
-        fbUrl = {$fbUrl}
+        rootPage = TEXT
+        fbUrl = TEXT
+        twitterUrl = TEXT
+        pinUrl = TEXT
+        instagramUrl = TEXT
+
+        rootPage.value = {$rootPage}
+        fbUrl.value = {$fbUrl}
+        twitterUrl.value = {$twitterUrl}
+        pinUrl.value = {$pinUrl}
+        instagramUrl.value = {$instagramUrl}
     }
 }
 
@@ -130,10 +143,13 @@ page.includeJS{
     file12  = {$templatePath}Resources/Public/assets/perfect-scrollbar/perfect-scrollbar.jquery.min.js
 }
 page.includeJSFooter{
-    file10  = {$templatePath}Resources/Public/assets/lib/jquery.plugin.min.js
-    file11  = {$templatePath}Resources/Public/assets/lib/jquery.countdown.min.js
-    file12  = {$templatePath}Resources/Public/assets/lib/isotope.pkgd.min.js
-    file13  = {$templatePath}Resources/Public/assets/lib/packery-mode.pkgd.min.js
-    file14  = {$templatePath}Resources/Public/assets/lib/owl.carousel.min.js
-    file15  = {$templatePath}Resources/Public/js/functions.js
+    file10  = {$templatePath}Resources/Public/assets/js/lightbox.js
+    file11  = {$templatePath}Resources/Public/assets/js/waitforimages.js
+    file12  = {$templatePath}Resources/Public/assets/js/imagesloaded.js
+    file13  = {$templatePath}Resources/Public/assets/lib/jquery.plugin.min.js
+    file20  = {$templatePath}Resources/Public/assets/lib/jquery.countdown.min.js
+    file30  = {$templatePath}Resources/Public/assets/lib/isotope.pkgd.min.js
+    file40  = {$templatePath}Resources/Public/assets/lib/packery-mode.pkgd.min.js
+    file50  = {$templatePath}Resources/Public/assets/lib/owl.carousel.min.js
+    file60  = {$templatePath}Resources/Public/js/functions.js
 }

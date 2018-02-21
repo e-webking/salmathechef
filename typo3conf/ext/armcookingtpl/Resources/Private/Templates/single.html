@@ -1,0 +1,76 @@
+<f:layout name="website" />
+<f:section name="content">
+    <f:render partial="Header" arguments="{_all}"/>
+    <div class="os-container main-header-w main-header-version_1">
+        <div class="main-header color-scheme-light " style="background-color:#FFFFFF; ">
+            <div class="logo" style="width: 210px;">
+                <f:cObject typoscriptObjectPath="lib.logo" />
+            </div>
+            <div class="top-menu menu-activated-on-hover">
+                <ul id="header-menu" class="menu"><f:cObject typoscriptObjectPath="lib.mainmenu" /></ul>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-header-w color-scheme-light">
+        <div class="os-container">
+            <div class="fixed-header-i">
+                <div class="fixed-logo-w" style="width: 140px;">
+                    <f:cObject typoscriptObjectPath="lib.logo" />
+                </div>
+                <div class="fixed-top-menu-w menu-activated-on-hover">
+                    <ul id="fixed-header-menu" class="menu"><f:cObject typoscriptObjectPath="lib.mainmenu" /></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-header-w">
+        <div class="mobile-header-menu-w menu-activated-on-click color-scheme-dark">
+            <ul id="mobile-header-menu" class="menu"><f:cObject typoscriptObjectPath="lib.mainmenu" /></ul>
+        </div>
+        <div class="mobile-header">
+            <div class="mobile-menu-toggler">
+              <i class="os-icon os-icon-thin-hamburger"></i>
+            </div>
+            <div class="mobile-logo" style="width: 100px;">
+                <f:cObject typoscriptObjectPath="lib.logo" />
+            </div>
+            <div class="mobile-menu-search-toggler">
+                
+            </div>
+        </div>
+    </div>
+<f:cObject typoscriptObjectPath="lib.content.center" />
+<div class="os-container">
+    <div class="main-footer with-social color-scheme-light">
+        <div class="footer-copy-and-menu-w">
+          <div class="footer-menu">
+            <ul id="footer-menu" class="menu">
+                <f:cObject typoscriptObjectPath="lib.footermenu" />      
+            </ul>
+          </div>
+            <div class="footer-copyright">
+                <p>Copyright 2018. Website developed by <a href="https://www.armtechnologies.com" target="_blank">ARM Technologies</a>.</p>
+            </div>
+        </div>
+        <div class="footer-social-w">
+          <ul class="bar-social">
+              <li><a href="{instagramUrl}" target="_blank"><i class="os-icon os-icon-social-instagram"></i></a></li>
+              <li><a href="{fbUrl}" target="_blank"><i class="os-icon os-icon-social-facebook"></i></a></li>
+              <li><a href="{twitterUrl}" target="_blank"><i class="os-icon os-icon-social-twitter"></i></a></li>
+              <li><a href="{pinUrl}" target="_blank"><i class="os-icon os-icon-social-pinterest"></i></a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+<div class="main-search-form-overlay"></div>
+<div class="main-search-form">
+    <form method="get" class="search-form" autocomplete="off">
+      <div class="search-field-w">
+        <input type="search" autocomplete="off" class="search-field" placeholder="Search …" value="" name="s" title="Search for:" />
+        <input type="submit" class="search-submit" value="Search" />
+      </div>
+    </form>
+    <div class="autosuggest-results"></div>
+</div>
+<div class="display-type"></div>
+</f:section>

@@ -64,3 +64,18 @@ lib.mainmenu {
    	wrap = <ul class="sub-menu">|</ul>
     }
 }
+
+lib.footermenu = HMENU
+lib.footermenu {
+    special = list
+    special.value = {$footerItems}
+    wrap = |
+    1 = TMENU
+    1 {
+        expAll = 1
+        noBlur = 1
+        NO = 1
+        NO.ATagTitle.field = navtitle // title
+        NO.wrapItemAndSub = <li class="menu-item menu-item-type-custom menu-item-object-custom">|</li>     
+    }
+}

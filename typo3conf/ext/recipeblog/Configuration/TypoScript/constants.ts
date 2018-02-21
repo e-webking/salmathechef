@@ -15,7 +15,10 @@ plugin.tx_recipeblog_list {
   settings {
         detailPid = 4
         searchPid = 32
+        homePid = 3
   }
 }
+
+
 
 plugin.tx_recipeblog_banner < plugin.tx_recipeblog_list

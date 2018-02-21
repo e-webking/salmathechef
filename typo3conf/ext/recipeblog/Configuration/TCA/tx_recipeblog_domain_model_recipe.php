@@ -274,6 +274,7 @@ return [
 				'type' => 'inline',
 				'foreign_table' => 'tx_recipeblog_domain_model_cookingstep',
 				'foreign_field' => 'recipe',
+                                'foreign_sortby' => 'sorting',
 				'maxitems'      => 99,
 				'appearance' => array(
 					'collapseAll' => 1,

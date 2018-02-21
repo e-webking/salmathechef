@@ -127,6 +127,9 @@
 				<source>Recipe</source>
 			</trans-unit>
                         
+                        <trans-unit id="tx_recipeblog_tpl.share">
+				<source>Share</source>
+			</trans-unit>
                         <trans-unit id="tx_recipeblog_tpl.cookingtime">
 				<source>Cooking Time:</source>
 			</trans-unit>
@@ -153,6 +156,21 @@
 			</trans-unit>
                         <trans-unit id="tx_recipeblog_tpl.populartags">
 				<source>Popular Tags</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.home">
+				<source>Home</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.socialshare">
+				<source>Share it on your social network:</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.linkcopy">
+				<source>Or you can just copy and share this url</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.ingredients">
+				<source>Ingredients</source>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.steps">
+				<source>Steps</source>
 			</trans-unit>
 		</body>
 	</file>

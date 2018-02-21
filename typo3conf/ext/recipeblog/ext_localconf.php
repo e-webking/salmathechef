@@ -75,7 +75,19 @@ call_user_func(
                 'Recipe' => 'search'
             ]
         );
-
+        
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'ARM.Recipeblog',
+            'Single',
+            [
+                'Recipe' => 'single'
+            ],
+            // non-cacheable actions
+            [
+                'Recipe' => 'single'
+            ]
+        );
+        
 	// wizards
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
 		'mod {

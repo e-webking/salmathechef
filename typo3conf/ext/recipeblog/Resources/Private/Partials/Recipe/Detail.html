@@ -1,0 +1,217 @@
+{namespace arm=ARM\Recipeblog\ViewHelpers}
+<!-- Breadcrum -->
+<div class="os-container top-bar-w">
+    <div class="top-bar">
+        <ul class="bar-breadcrumbs">
+            <li><f:link.page pageUid="{settings.homePid}">{f:translate(key:'tx_recipeblog_tpl.home')}</f:link.page></li>
+            <li><f:link.action pageUid="{settings.searchPid}" action="search" pluginName="search" arguments="{category:recipe.category}">{recipe.category.title}</f:link.action></li>
+            <li>{recipe.title}</li>
+        </ul>
+        <ul class="bar-social">
+            <li><a href="<arm:socialLink social='facebook' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank"><i class="os-icon os-icon-social-facebook"></i></a></li>
+            <li><a href="<arm:socialLink social='twitter' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank"><i class="os-icon os-icon-social-twitter"></i></a></li>
+            <li><a href="<arm:socialLink social='pinterest' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank"><i class="os-icon os-icon-social-pinterest"></i></a></li>
+            <li><a href="<arm:socialLink social='gplus' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank"><i class="os-icon os-icon-social-google-plus"></i></a></li>
+        </ul>
+    </div>
+</div>
+<div class="os-container single-big-media">
+    <div class="single-main-media">
+        <div class="single-main-media-image-w active fader-activator  osetin-lightbox-trigger" data-lightbox-caption="{recipe.title}" data-lightbox-img-src="{recipe.image.originalResource.publicUrl}">
+            <span class="image-fader"><span class="hover-icon-w"><i class="os-icon os-icon-plus"></i></span></span>
+            <img src="{recipe.image.originalResource.publicUrl}" alt="{recipe.title}" />
+        </div>
+    </div>
+</div>
+<div class="os-container big-meta-box-w">
+    <div class="big-meta-box">
+        <ul>
+            <li class="single-meta-share">
+                <a class="trigger-share-recipe-lightbox" href="#">
+                    <i class="os-icon os-icon-thin-share-alt"></i>
+                    <span>{f:translate(key:'tx_recipeblog_tpl.share')}</span>
+                </a>
+            </li>
+            <li class="single-meta-views">
+                <span>{recipe.views}</span>
+            </li>
+            <li class="single-meta-likes">
+                <f:link.action action="like" arguments="{recipe:recipe}" class="slide-button slide-like-button osetin-vote-trigger osetin-vote-not-voted">
+                <span class="slide-button-i">
+                    <i class="os-icon os-icon-thin-heart"></i>
+                    <span class="slide-button-label osetin-vote-action-label"> Like </span>
+                    <span class="slide-button-sub-label osetin-vote-count"> {recipe.likes} </span>
+                </span>
+              </f:link.action>
+            </li>
+            <li class="single-meta-cooking-time tooltip-trigger" data-tooltip-header="Cooking Time: {recipe.duration}"><i class="os-icon os-icon-thin-clock-busy"></i> <span>{recipe.duration}</span></li>
+            <li class="single-meta-serves"><i class="os-icon os-icon-thin-serve"></i> <span>Serves {recipe.serves}</span></li>
+            <li class="single-meta-rating"><a href="#osetinRecipeReviews"><div class="review-stars-w"><i class="os-icon os-icon-star-full rating-star-on"></i><i class="os-icon os-icon-star-full rating-star-on"></i><i class="os-icon os-icon-star-full rating-star-on"></i><i class="os-icon os-icon-star-full rating-star-on"></i><i class="os-icon os-icon-star-full rating-star-on"></i></div><span class="single-meta-total-reviews">(1)</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="single-panel os-container">
+    <div class="single-panel-details move-on-scroll">
+        <div class="single-panel-details-i">
+            <div class="post-share-box">
+                <div class="psb-close"><i class="os-icon os-icon-thin-close-round"></i></div>
+                <h3 class="post-share-header">{f:translate(key:'tx_recipeblog_tpl.socialshare')}</h3>
+                <div class="psb-links">
+                  <a href="<arm:socialLink social='facebook' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="psb-link psb-facebook"><i class="os-icon os-icon-facebook"></i></a>
+                  <a href="<arm:socialLink social='twitter' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="psb-link psb-twitter"><i class="os-icon os-icon-twitter"></i></a>
+                  <a href="<arm:socialLink social='pinterest' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="psb-link psb-pinterest"><i class="os-icon os-icon-pinterest"></i></a>
+                  <a href="<arm:socialLink social='gplus' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="psb-link psb-google-plus"><i class="os-icon os-icon-social-google-plus"></i></a>
+                </div>
+                <div class="psb-url">
+                    <div class="psb-url-heading">{f:translate(key:'tx_recipeblog_tpl.linkcopy')}</div>
+                    <input type="text" class="psb-url-input" value="<arm:socialLink social='url' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />">
+                </div>
+            </div>
+            
+            <div class="sidebar-single-w">
+                <h3><i class="os-icon os-icon-social-youtube"></i> YouTube Video</h3>
+                <aside class="widget-first widget widget_text">
+                    <div class="textwidget">
+                        <iframe src="{recipe.yturl}" width="454" height="255" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+                    </div>
+                </aside>
+            </div>
+            <div class="single-recipe-ingredients-nutritions">
+                <div class="single-ingredients">
+                    <div class="close-btn"><i class="os-icon os-icon-plus"></i></div>
+                    <h3><i class="os-icon os-icon-thin-paper-holes-text"></i> {f:translate(key:'tx_recipeblog_tpl.ingredients')}</h3>
+                    <table class="ingredients-table">
+                        <f:for each="{recipe.ingredients}" as="ingredient">
+                        <tr>
+                            <td class="ingredient-action">
+                                <f:image src="{ingredient.ingredient.icon.uid}" width="60c" height="60" treatIdAsReference="1" />
+                            </td>
+                            <td>
+                                <span class="ingredient-name">{ingredient.ingredient.title}</span>
+                                <span class="ingredient-amount" data-initial-amount="{ingredient.qty}"> - {ingredient.qty}</span>
+                            </td>
+                        </tr>
+                        </f:for>
+                    </table>
+                </div>
+            </div>
+            <div class="sidebar-single-w">
+                <aside class="widget-odd widget-last widget widget_text">
+                    <div class="textwidget">
+                         [Google Adsense]
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <div class="single-panel-main">
+        <div class="single-title">
+            <h1>{recipe.title}</h1>
+        </div>
+        <div class="quick-description-quote position-single">
+            <p>{recipe.brief}</p>
+        </div>
+        <div class="single-recipe-custom-taxonomies position-single">
+            <div class="single-recipe-features">
+                [Google AdSense]
+            <!-- script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- salmakhatun85_box-sec_AdSense1_970x90_as -->
+            <!-- ins class="adsbygoogle" style="display: inline-block; width: 769px; height: 90px;" data-ad-client="ca-pub-1286748015534916" data-ad-slot="5661314390" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:869px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:869px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:869px;height:90px;" width="869" height="90" frameborder="0"></iframe></ins></ins></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script -->
+            </div>
+        </div>
+        <div class="single-content">
+            <h2 class="bordered-title"><i class="os-icon os-icon-thin-paper-list"></i> <span>{f:translate(key:'tx_recipeblog_tpl.steps')}</span></h2>
+            <div class="single-content-self">
+                <div class="single-sharing-box">
+                    <div class="split-share">
+                      <span>Share</span>
+                      <a href="<arm:socialLink social='facebook' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-facebook"><i class="os-icon os-icon-facebook"></i></a>
+                      <a href="<arm:socialLink social='twitter' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-twitter"><i class="os-icon os-icon-twitter"></i></a>
+                      <a href="<arm:socialLink social='pinterest' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-pinterest"><i class="os-icon os-icon-pinterest"></i></a>
+                      <a href="<arm:socialLink social='gplus' pageuid='{settings.detailPid}' recipe='{recipe.uid}' text='{recipe.title}' image='{recipe.image.originalResource.publicUrl}' />" target="_blank" class="archive-item-share-link aisl-googleplus"><i class="os-icon os-icon-social-googleplus"></i></a>
+                    </div>
+                </div>                
+            </div>
+            <div class="single-steps">
+                <table class="recipe-steps-table">
+                    <f:for each="{recipe.steps}" as="step" iteration="rows">
+                        <tr class="single-step">
+                            <td class="single-step-number">
+                                <div class="single-step-number-i">
+                                  <div class="single-step-number-value">{rows.cycle}</div>
+                                  <div class="single-step-control">
+                                    <div class="single-step-complete-label">{step.duration}</div>
+                                  </div>
+                                </div>
+                            </td>
+                            <td class="single-step-description">
+                                <div class="single-step-description-i">
+                                    <h2 class="step-title"><span>{step.title}</span></h2>
+                                    <f:if condition="{step.images}">
+                                        <f:if condition="{step.images->f:count()} > 1">
+                                            <f:then>
+                                                <ul class="single-step-media single-media-{step.images->f:count()}-image">
+                                                <f:for each="{step.images}" as="img">
+                                                    <li>
+                                                      <a class="osetin-lightbox-trigger-step-images" href="{img.originalResource.publicUrl}" data-lightbox-thumb-src="{f:uri.image(src: '{img.originalResource.publicUrl}', width: '100c', height:100)}" data-lightbox-img-src="{img.originalResource.publicUrl}">
+                                                        <f:image src="{img.uid}" class="t3-image" treatIdAsReference="1" width="600" />
+                                                      </a>
+                                                    </li>
+                                                  </f:for>
+                                                </ul>
+                                            </f:then>
+                                            <f:else>
+                                                <ul class="single-step-media single-media-1-image">
+                                                <li>
+                                                    <a class="osetin-lightbox-trigger-step-images" href="{step.images.0.originalResource.publicUrl}" data-lightbox-thumb-src="{f:uri.image(src: '{step.images.0.originalResource.publicUrl}', width: '100c', height:100)}" data-lightbox-img-src="{step.images.0.originalResource.publicUrl}">
+                                                      <f:image src="{step.images.0.uid}" class="t3-image" treatIdAsReference="1" width="600" />
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                            </f:else>
+                                        </f:if>
+                                    </f:if>
+                                    <p><f:format.nl2br>{step.detail}</f:format.nl2br></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </f:for>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- User comment section -->
+<div class="os-container">
+    <div class="single-post-comments-w with-ads">
+        <div class="single-post-comments" id="singlePostComments">
+            <div class="dcl-disqus-thread" id="comments" >
+
+            </div>
+        </div>
+        <div class="single-post-comments-sidebar">
+            <aside class="widget-odd widget-last widget-first widget-1 widget widget_text">
+                <div class="textwidget">
+                   
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<!-- Amazon ADs -->
+<f:if condition="{recipe.amazonads}">
+<div class="os-container">
+    <div class="pre-footer widgets-count-5">
+        <f:for each="{recipe.amazonads}" as="ad">
+            <aside class="widget widget_text">
+                <f:format.raw>{ad.code}</f:format.raw>
+            </aside>
+        </f:for>
+    </div>
+</div>
+</f:if>

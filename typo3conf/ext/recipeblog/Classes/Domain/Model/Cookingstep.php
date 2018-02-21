@@ -39,10 +39,10 @@ class Cookingstep extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $duration = '';
 
     /**
-     * images
+     * images to use in the gallery
      *
-     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-     * @cascade remove
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @lazy
      */
     protected $images = null;
 
@@ -52,6 +52,15 @@ class Cookingstep extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \ARM\Recipeblog\Domain\Model\Recipe
      */
     protected $recipe = null;
+    
+    /**
+     * __construct
+     *
+     * @return AbstractObject
+     */
+    public function __construct() {
+        $this->images = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
 
     /**
      * Returns the title
@@ -119,7 +128,7 @@ class Cookingstep extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the images
      *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $images
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
      */
     public function getImages()
     {
@@ -129,10 +138,10 @@ class Cookingstep extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the images
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $images
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
      * @return void
      */
-    public function setImages(\TYPO3\CMS\Extbase\Domain\Model\FileReference $images)
+    public function setImages(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $images)
     {
         $this->images = $images;
     }

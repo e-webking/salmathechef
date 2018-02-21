@@ -20,9 +20,9 @@ class Recipeingredient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * qty
      *
-     * @var float
+     * @var string
      */
-    protected $qty = 0.0;
+    protected $qty = '';
 
     /**
      * recipe
@@ -41,7 +41,7 @@ class Recipeingredient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the qty
      *
-     * @return float $qty
+     * @return string $qty
      */
     public function getQty()
     {
@@ -51,7 +51,7 @@ class Recipeingredient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the qty
      *
-     * @param float $qty
+     * @param string $qty
      * @return void
      */
     public function setQty($qty)
