@@ -86,6 +86,25 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function searchAction() {
         
+        $category = NULL;
+        $tag = NULL;
+        
+        if ($this->request->hasArgument('category')) {
+            $category = $this->request->getArgument('category');
+        }
+        if ($this->request->hasArgument('tag')) {
+            $tag = $this->request->getArgument('tag');
+        }
+        
+        $categories = $this->categoryRepository->findAll();
+        $tags = $this->tagRepository->findAll();
+        $recipes = $this->recipeRepository->search($category, $tag);
+        
+        $this->view->assign('category', $category);
+        $this->view->assign('tag', $tag);
+        $this->view->assign('categories', $categories);
+        $this->view->assign('tags', $tags);
+        $this->view->assign('recipes', $recipes);
     }
     
     /**
@@ -107,6 +126,20 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function showAction(\ARM\Recipeblog\Domain\Model\Recipe $recipe)
     {
+        $pageUid = $recipe->getPageuid();
+        
+        if ($pageUid > 0) {
+            $link = $this->uriBuilder->setCreateAbsoluteUri(TRUE)
+                    ->setUseCacheHash(FALSE)
+                    ->setTargetPageUid($pageUid)
+                    ->build();
+           /**
+            * @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer
+            */
+            $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+            $pageRenderer->addHeaderData('<link rel="canonical" href="'.$link.'" />');
+        }
+        
         $views = $recipe->getViews();
         $recipe->setViews(++$views);
         $this->recipeRepository->update($recipe);

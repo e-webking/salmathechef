@@ -86,9 +86,13 @@ page.10 {
         1 = TEXT
         1.value = {$templatePath}Resources/Private/Templates/main.html
 
-         # Home Template
+        # Inner single
         2 = TEXT
         2.value = {$templatePath}Resources/Private/Templates/single.html
+
+        # Inner 2 col
+        3 = TEXT
+        3.value = {$templatePath}Resources/Private/Templates/2col.html
     }
     variables {
         rootPage = TEXT

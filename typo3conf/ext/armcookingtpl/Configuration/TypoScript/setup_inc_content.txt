@@ -95,3 +95,7 @@ lib.socialLinks {
     40.value = <li><a href="https://in.pinterest.com/salma17khatun/" target="_blank"><i class="os-icon os-icon-social-pinterest"></i></a></li>
     wrap = <ul class="shortcode-social-links">|</ul>
 }
+
+lib.pageTitle = TEXT
+lib.pageTitle.data = leveltitle:-1
+

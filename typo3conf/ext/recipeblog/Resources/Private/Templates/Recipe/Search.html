@@ -1,0 +1,22 @@
+<div class="archive-posts masonry-grid-w per-row-3">
+    <div class="masonry-grid">
+        <div class="masonry-item any full">
+            <f:form action="search" method="post" class="search-form">
+            <table>
+                <tr>
+                    <td><f:form.select name="category" options="{categories}" value="{category}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel=" - Select Category -" /></td>
+                    <td><f:form.select name="tag" options="{tags}" value="{tag}" optionValueField="uid" optionLabelField="tag" prependOptionValue="0" prependOptionLabel=" - Select Tag -" /></td>
+                    <td><f:form.submit value="Search" class="search-submit" /></td>
+                </tr>
+            </table>
+            </f:form>
+        </div>
+        <f:if condition="{recipes}">
+            <f:for each="{recipes}" as="recipe">
+                <div class="masonry-item any third">
+                    <f:render partial="Recipe/Article" arguments="{_all}" />
+                </div>
+            </f:for>
+        </f:if>
+    </div>
+</div>

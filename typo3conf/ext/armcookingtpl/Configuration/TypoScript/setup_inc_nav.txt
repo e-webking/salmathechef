@@ -79,3 +79,16 @@ lib.footermenu {
         NO.wrapItemAndSub = <li class="menu-item menu-item-type-custom menu-item-object-custom">|</li>     
     }
 }
+
+lib.breadcrumbs = HMENU
+lib.breadcrumbs.wrap= <ul class="bar-breadcrumbs">|</ul>
+lib.breadcrumbs.special = rootline
+lib.breadcrumbs.special.range = 1|-1
+lib.breadcrumbs.1 = TMENU
+lib.breadcrumbs.1 {
+  NO.allWrap = <li>|</li>
+  NO.ATagTitle.field = description // title
+  CUR = 1
+  CUR.doNotLinkIt = 1
+  CUR.allWrap = <li>|</li>
+}

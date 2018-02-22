@@ -84,4 +84,30 @@ class RecipeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $query->execute();
     }
     
+    /**
+     * 
+     * @param int $category
+     * @param int $tag
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function search($category=NULL, $tag = NULL) {
+        
+        $query = $this->createQuery();
+        $constraints = array();
+        $constraints[] = $query->equals('hidden', 0);
+        
+        if ($category > 0 && isset($category)) {
+            $constraints[] = $query->equals('category', $category);
+        }
+        if ($tag > 0 && isset($tag)) {
+            $constraints[] = $query->contains('tags', $tag);
+        }
+        $query->matching($query->logicalAnd($constraints));
+        $query->setOrderings(
+            array('uploadedon' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)
+        );
+        
+        return $query->execute();
+    }
+    
 }
