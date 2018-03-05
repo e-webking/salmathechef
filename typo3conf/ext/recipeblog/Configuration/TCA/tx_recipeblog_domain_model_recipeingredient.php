@@ -136,7 +136,7 @@ return [
 			    'type' => 'select',
 			    'renderType' => 'selectSingle',
 			    'foreign_table' => 'tx_recipeblog_domain_model_ingredient',
-                            'foreign_table_where' => ' ORDER BY title',
+                            'foreign_table_where' => ' ORDER BY tx_recipeblog_domain_model_ingredient.title',
 			    'minitems' => 0,
 			    'maxitems' => 1,
 			],

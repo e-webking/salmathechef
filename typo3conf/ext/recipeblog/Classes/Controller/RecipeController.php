@@ -173,6 +173,23 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
         $recipe = $this->recipeRepository->findByUid(intval($recipeUid));
         $category = $recipe->getCategory();
         $relatedrecipes = $this->recipeRepository->findRelated($category->getUid(), $recipe->getUid());
+        $views = $recipe->getViews();
+        $recipe->setViews(++$views);
+        $this->recipeRepository->update($recipe);
+        
+        $tagStr = $recipe->getCategory()->getTitle();
+        $tags = $recipe->getTags();
+        if (count($tags) > 0) {
+           foreach($tags as $tag) {
+               $tagStr .= ','.$tag->getTag();
+           }
+        }
+        /**
+         * @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer
+         */
+        $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+        $pageRenderer->addHeaderData('<meta name=”description” content=”'. $recipe->getTitle() .': ' .$recipe->getBrief() .'" />');
+        $pageRenderer->addHeaderData('<meta name=”keywords” content=”'. $tagStr .'" />');
         
         $this->view->assign('recipe', $recipe);
         $this->view->assign('relatedrecipes', $relatedrecipes);

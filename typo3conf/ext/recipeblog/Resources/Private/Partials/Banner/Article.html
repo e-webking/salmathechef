@@ -29,13 +29,13 @@
                 <div class="archive-item-date-posted"><f:format.date format="M d, Y">{recipe.uploadedon}</f:format.date></div>
             </div>
             <div class="archive-item-views-count-likes">
-                <a href="#" class="slide-button slide-like-button osetin-vote-trigger osetin-vote-not-voted" data-has-voted-label="Liked" data-not-voted-label="Like" data-post-id="177" data-vote-action="vote" data-votes-count="263">
+                <f:link.action action="like" pageUid="{settings.detailPid}" pluginName="List" controller="Recipe" arguments="{recipe:recipe}" class="slide-button slide-like-button osetin-vote-trigger osetin-vote-not-voted">
                 <span class="slide-button-i">
                     <i class="os-icon os-icon-thin-heart"></i>
                     <span class="slide-button-label osetin-vote-action-label">{f:translate(key:'tx_recipeblog_tpl.like')}</span>
                     <span class="slide-button-sub-label osetin-vote-count ">{recipe.likes}</span>
                 </span>
-                </a>
+                </f:link.action>
             </div>
     </div>
     <div class="archive-item-deep-meta">

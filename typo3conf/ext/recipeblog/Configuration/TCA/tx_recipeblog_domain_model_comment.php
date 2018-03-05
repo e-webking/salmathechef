@@ -1,4 +1,4 @@
-<?php
+    <?php
 return [
     'ctrl' => [
         'title'	=> 'LLL:EXT:recipeblog/Resources/Private/Language/locallang_db.xlf:tx_recipeblog_domain_model_comment',
@@ -6,7 +6,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-		'versioningWS' => FALSE,
+	'versioningWS' => FALSE,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',

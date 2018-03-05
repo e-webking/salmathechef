@@ -6,12 +6,18 @@
             <tr>
             <f:for each="{categories}" as="category" iteration="rows">
                 <td><f:render partial="Recipe/Category" arguments="{_all}" /></td>
-                <f:if condition="{rows.isEven}">
-                </tr>
-                <tr>
+                <f:if condition="{rows.isLast}">
+                    <f:then>
+                        </tr>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{rows.isEven}">
+                            </tr>
+                            <tr>
+                        </f:if>
+                    </f:else>
                 </f:if>
-            </f:for>
-            </tr>
+            </f:for>  
         </f:if>
         </tbody>
     </table>

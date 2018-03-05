@@ -27,7 +27,7 @@
                 <div class="archive-item-meta-cooking-time">
                      {f:translate(key:'tx_recipeblog_tpl.cookingtime')} {recipe.duration}
                 </div>
-                <div class="archive-item-meta-categories">
+                <div class="archive-item-meta-categories tags">
                     <ul class="post-categories">
                         <li><f:link.action pageUid="{settings.searchPid}" action="search" pluginName="search" arguments="{category:recipe.category}">{recipe.category.title}</f:link.action></li>
                     <f:for each="{recipe.tags}" as="tag">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="archive-item-content-text">
-                {recipe.brief}
+                <f:format.crop maxCharacters="110">{recipe.brief}</f:format.crop>
             </div>
             <div class="archive-item-deep-meta">
                     <div class="archive-item-rating-and-read-more">

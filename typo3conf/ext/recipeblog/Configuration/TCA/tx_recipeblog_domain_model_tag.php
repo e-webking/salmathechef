@@ -7,6 +7,7 @@ return [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
 	'versioningWS' => FALSE,
+        'default_sortby' => 'tag',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',

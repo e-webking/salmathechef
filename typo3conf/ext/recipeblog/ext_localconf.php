@@ -80,11 +80,11 @@ call_user_func(
             'ARM.Recipeblog',
             'Single',
             [
-                'Recipe' => 'single'
+                'Recipe' => 'single, like'
             ],
             // non-cacheable actions
             [
-                'Recipe' => 'single'
+                'Recipe' => 'single, like'
             ]
         );
         
