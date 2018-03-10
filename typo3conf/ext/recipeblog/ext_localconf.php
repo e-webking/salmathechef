@@ -87,6 +87,17 @@ call_user_func(
                 'Recipe' => 'single, like'
             ]
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'ARM.Recipeblog',
+            'Catlist',
+            [
+                'Recipe' => 'catlist'
+            ],
+            // non-cacheable actions
+            [
+                'Recipe' => 'catlist'
+            ]
+        );
         
 	// wizards
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(

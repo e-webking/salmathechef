@@ -65,13 +65,6 @@ page.headerData.10.value (
 <!-- Fonts -->
 <link rel='stylesheet' id='fonts-css'  href='https://fonts.googleapis.com/css?family=Domine%3A400%2C700' type='text/css' media='all' />
 <link rel='stylesheet' id='google-font-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic%7CYanone+Kaffeesatz' type='text/css' media='all' />
-#<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-#<script>
-#     (adsbygoogle = window.adsbygoogle || []).push({
-#          google_ad_client: "ca-pub-1286748015534916",
-#          enable_page_level_ads: true
-#     });
-#</script>
 )
 
 page.10 = FLUIDTEMPLATE

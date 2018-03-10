@@ -1,0 +1,11 @@
+<div class="archive-posts masonry-grid-w per-row-3">
+    <div class="masonry-grid">
+        <f:if condition="{recipes}">
+            <f:for each="{recipes}" as="recipe">
+                <div class="masonry-item any third">
+                    <f:render partial="Recipe/Article" arguments="{_all}" />
+                </div>
+            </f:for>
+        </f:if>
+    </div>
+</div>

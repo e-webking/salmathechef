@@ -29,6 +29,12 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var int
      */
     protected $pageuid = 0;
+    
+    /**
+     *
+     * @var int
+     */
+    protected $menupage = 0;
 
     /**
      * brief
@@ -187,6 +193,27 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPageuid($pageuid)
     {
         $this->pageuid = $pageuid;
+    }
+    
+    /**
+     * Returns the menupage
+     *
+     * @return int $menupage
+     */
+    public function getMenupage()
+    {
+        return $this->menupage;
+    }
+
+    /**
+     * Sets the menupage
+     *
+     * @param int $menupage
+     * @return void
+     */
+    public function setMenupage($menupage)
+    {
+        $this->menupage = $menupage;
     }
 
     /**

@@ -16,6 +16,7 @@ plugin.tx_recipeblog_list {
         detailPid = {$plugin.tx_recipeblog_list.settings.detailPid}
         searchPid = {$plugin.tx_recipeblog_list.settings.searchPid}
         homePid = {$plugin.tx_recipeblog_list.settings.homePid}
+        recipePid = {$plugin.tx_recipeblog_list.settings.recipePid}
         gplus = https://plus.google.com/117867866037937115341
         twitter = https://www.twitter.com/salmathechef/
         facebook = https://www.facebook.com/salmathechef/
@@ -53,3 +54,4 @@ plugin.tx_recipeblog_popular < plugin.tx_recipeblog_list
 plugin.tx_recipeblog_tags < plugin.tx_recipeblog_list
 plugin.tx_recipeblog_search < plugin.tx_recipeblog_list
 plugin.tx_recipeblog_single < plugin.tx_recipeblog_list
+plugin.tx_recipeblog_catlist < plugin.tx_recipeblog_list

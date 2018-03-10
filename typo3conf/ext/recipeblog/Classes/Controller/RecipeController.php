@@ -114,7 +114,19 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function listAction()
     {
-        $recipes = $this->recipeRepository->findAll();
+        $recipes = $this->recipeRepository->findByPid($this->settings['recipePid']);
+        $this->view->assign('recipes', $recipes);
+    }
+    
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function catlistAction()
+    {
+        $menupage = $GLOBALS['TSFE']->id; // $this->settings['menupage'];
+        $recipes = $this->recipeRepository->findByMenupage(intval($menupage));
         $this->view->assign('recipes', $recipes);
     }
 

@@ -47,9 +47,49 @@ class RecipeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     }
     
     /**
+     * @param int $pid Description
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findByPid($pid) {
+        
+        $query = $this->createQuery();
+        $constraints = array();
+        $constraints[] = $query->equals('hidden', 0);
+        $constraints[] = $query->equals('pid', $pid);
+        $query->matching($query->logicalAnd($constraints));
+        
+        $query->setOrderings(
+            array('uploadedon' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)
+        );
+        
+        return $query->execute();
+    }
+    
+    /**
+     * 
+     * @param array $category
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function getByCategories($catArr) {
+        
+        $query = $this->createQuery();
+        $constraints = array();
+        $constraints[] = $query->in('category', $catArr);
+        $constraints[] = $query->equals('hidden', 0);
+        $query->matching($query->logicalAnd($constraints));
+        
+        $query->setOrderings(
+            array('uploadedon' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)
+        );
+        
+        return $query->execute();
+    }
+    
+    /**
      * 
      * @param int $category
      * @param int $recipe
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
     public function findRelated($category,$recipe) {
         

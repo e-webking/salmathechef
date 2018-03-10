@@ -189,6 +189,7 @@ return [
 			    'type' => 'select',
 			    'renderType' => 'selectSingle',
 			    'foreign_table' => 'tx_recipeblog_domain_model_recipe',
+                             'foreign_table_where' => 'AND tx_recipeblog_domain_model_recipe.pid=###CURRENT_PID###',
 			    'minitems' => 0,
 			    'maxitems' => 1,
 			],

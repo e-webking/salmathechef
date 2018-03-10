@@ -127,11 +127,32 @@
 				<source>Recipe</source>
 			</trans-unit>
                         
+                        <trans-unit id="tx_recipeblog_tpl.home">
+                                <target>প্রথম পাতা</target>
+			</trans-unit>
                         <trans-unit id="tx_recipeblog_tpl.cookingtime">
-                                <target>Cooking Time [BN]:</target>
+                                <target>সময়:</target>
 			</trans-unit>
                         <trans-unit id="tx_recipeblog_tpl.salma">
-				<target>Salma Khatun [BN]</target>
+				<target>সালমা খাতুন</target>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.ingredients">
+				<target>উপাদান</target>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.steps">
+				<target>ধাপ</target>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.readmore">
+				<target>আরও পড়তে</target>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.categories">
+                                <target>বিভাগ</target>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.popularrecipe">
+                                <target>জনপ্রিয় রেসিপি</target>
+			</trans-unit>
+                        <trans-unit id="tx_recipeblog_tpl.populartags">
+                                <target>জনপ্রিয় ট্যাগ</target>
 			</trans-unit>
 		</body>
 	</file>

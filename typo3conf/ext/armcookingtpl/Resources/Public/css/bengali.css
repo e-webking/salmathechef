@@ -1,0 +1,16 @@
+body {
+    font-family: 'Hind Siliguri',serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.428571429;
+    color: rgba(0,0,0,0.8);
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Hind Siliguri',serif;
+}
+.fixed-top-menu-w > ul > li a, .single-ingredients table.ingredients-table td {
+    font-family: 'Hind Siliguri',serif !important;
+}
+.top-bar .bar-breadcrumbs, .top-bar .bbp-breadcrumb, .main-header .top-menu ul li a {
+    font-family: 'Hind Siliguri',serif !important;
+}

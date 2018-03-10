@@ -103,6 +103,7 @@ CREATE TABLE tx_recipeblog_domain_model_recipe (
 	views int(11) DEFAULT '0' NOT NULL,
 	likes int(11) DEFAULT '0' NOT NULL,
 	category int(11) unsigned DEFAULT '0',
+        menupage int(11) unsigned DEFAULT '0',
 	tags int(11) unsigned DEFAULT '0' NOT NULL,
 	amazonads int(11) unsigned DEFAULT '0' NOT NULL,
         steps int(11) unsigned DEFAULT '0' NOT NULL,

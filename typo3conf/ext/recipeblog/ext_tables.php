@@ -66,6 +66,11 @@ call_user_func(
     'search',
     'Recipe Search'
 );
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    $_EXTKEY,
+    'catlist',
+    'Recipe list [Category]'
+);
 
 $pluginSignature = str_replace('_', '', $_EXTKEY) . '_banner';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
@@ -80,3 +85,9 @@ $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_
 $pluginSignature = str_replace('_', '', $_EXTKEY) . '_single';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_single.xml');
+
+/*
+$pluginSignature = str_replace('_', '', $_EXTKEY) . '_catlist';
+$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_catlist.xml');
+*/

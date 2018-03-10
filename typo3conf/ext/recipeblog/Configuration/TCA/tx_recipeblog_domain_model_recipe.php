@@ -17,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-	'searchFields' => 'title,pageuid,brief,image,yturl,serves,uploadedon,views,likes,category,tags,amazonads',
+	'searchFields' => 'title,pageuid,brief,image,yturl,serves,uploadedon,views,likes,category,menupage,tags,amazonads',
         'iconfile' => 'EXT:recipeblog/Resources/Public/Icons/tx_recipeblog_domain_model_recipe.gif'
     ],
     'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, duration, image, yturl, serves, uploadedon, views, likes, category, tags,ingredients,steps,amazonads',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, duration, image, yturl, serves, uploadedon, views, likes, category, menupage, tags,ingredients,steps,amazonads',
     ],
     'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, duration, image, yturl, serves, uploadedon,--div--;Relations, category,tags, ingredients, steps,--div--;ADs & Activities,amazonads,views,likes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, duration, image, yturl, serves, uploadedon,--div--;Relations, category,menupage,tags, ingredients, steps,--div--;ADs & Activities,amazonads,views,likes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
 		'sys_language_uid' => [
@@ -71,7 +71,7 @@ return [
                 'max' => 255,
             ],
         ],
-		'hidden' => [
+	'hidden' => [
             'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
             'config' => [
@@ -83,7 +83,7 @@ return [
                 ],
             ],
         ],
-		'starttime' => [
+	'starttime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
@@ -117,6 +117,15 @@ return [
 			    'eval' => 'int'
 			],
 	    ],
+        'menupage'=> [
+            'exclude' => true,
+            'label' =>'Menu Page',
+            'config' => [
+                         'type' => 'input',
+                         'size' => 10,
+                         'eval' => 'int'
+                     ],
+         ],
        'title' => [
 	       'exclude' => true,
 	       'label' =>'LLL:EXT:recipeblog/Resources/Private/Language/locallang_db.xlf:tx_recipeblog_domain_model_recipe.title',
@@ -245,6 +254,7 @@ return [
 			    'type' => 'select',
 			    'renderType' => 'selectSingle',
 			    'foreign_table' => 'tx_recipeblog_domain_model_category',
+                            'foreign_table_where' => 'AND tx_recipeblog_domain_model_category.pid=###CURRENT_PID###',
 			    'minitems' => 0,
 			    'maxitems' => 1,
 			],
@@ -256,6 +266,7 @@ return [
 			    'type' => 'select',
 			    'renderType' => 'selectMultipleSideBySide',
 			    'foreign_table' => 'tx_recipeblog_domain_model_tag',
+                            'foreign_table_where' => 'AND tx_recipeblog_domain_model_tag.pid=###CURRENT_PID###',
 			    'MM' => 'tx_recipeblog_recipe_tag_mm',
 			    'size' => 10,
 			    'autoSizeMax' => 5,
