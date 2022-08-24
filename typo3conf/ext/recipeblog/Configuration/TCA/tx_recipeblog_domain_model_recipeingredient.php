@@ -25,7 +25,7 @@ return [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, qty, recipe, ingredient',
     ],
     'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, qty, recipe, ingredient, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, recipe, ingredient, qty,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
 		'sys_language_uid' => [
@@ -114,7 +114,7 @@ return [
 	        'label' => 'LLL:EXT:recipeblog/Resources/Private/Language/locallang_db.xlf:tx_recipeblog_domain_model_recipeingredient.qty',
 	        'config' => [
 			    'type' => 'input',
-			    'size' => 30,
+			    'size' => 10,
 			    'eval' => 'trim'
 			],
 	    ],

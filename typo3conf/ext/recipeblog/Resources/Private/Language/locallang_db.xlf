@@ -51,6 +51,9 @@
 			<trans-unit id="tx_recipeblog_domain_model_recipe.brief">
 				<source>Brief</source>
 			</trans-unit>
+                        <trans-unit id="tx_recipeblog_domain_model_recipe.tips">
+				<source>Tips</source>
+			</trans-unit>
 			<trans-unit id="tx_recipeblog_domain_model_recipe.image">
 				<source>Image</source>
 			</trans-unit>

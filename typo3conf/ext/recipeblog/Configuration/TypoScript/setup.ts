@@ -17,6 +17,7 @@ plugin.tx_recipeblog_list {
         searchPid = {$plugin.tx_recipeblog_list.settings.searchPid}
         homePid = {$plugin.tx_recipeblog_list.settings.homePid}
         recipePid = {$plugin.tx_recipeblog_list.settings.recipePid}
+        crop = {$plugin.tx_recipeblog_list.settings.crop}
         gplus = https://plus.google.com/117867866037937115341
         twitter = https://www.twitter.com/salmathechef/
         facebook = https://www.facebook.com/salmathechef/

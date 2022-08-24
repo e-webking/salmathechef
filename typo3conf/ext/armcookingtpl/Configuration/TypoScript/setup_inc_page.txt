@@ -66,7 +66,17 @@ page.headerData.10.value (
 <link rel='stylesheet' id='fonts-css'  href='https://fonts.googleapis.com/css?family=Domine%3A400%2C700' type='text/css' media='all' />
 <link rel='stylesheet' id='google-font-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic%7CYanone+Kaffeesatz' type='text/css' media='all' />
 )
-
+page.headerData.15 = TEXT
+page.headerData.15.value (
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102685803-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-102685803-1');
+  gtag('set', {'user_id': 'USER_ID'});
+</script>
+)
 page.10 = FLUIDTEMPLATE
 page.10 {
   file = {$templatePath}Resources/Private/Templates/main.html
@@ -126,7 +136,7 @@ urchinTracker();
   ga('send', 'pageview');
 </script>
 )
-page.footerData.999 < lib.googleTracker
+#page.footerData.999 < lib.googleTracker
 
 ## Body Class
 page.bodyTag = <body class="page-template dropdown-menu-rounded-corners dropdown-menu-color-scheme-light" style="background-image:url(typo3conf/ext/armcookingtpl/Resources/Public/images/bg3.jpg); background-repeat: repeat; background-position: top center;background-size: cover;">

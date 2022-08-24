@@ -42,6 +42,12 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $brief = '';
+    
+    /**
+     *
+     * @var string
+     */
+    protected $tips = '';
 
     /**
      * image
@@ -235,6 +241,27 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setBrief($brief)
     {
         $this->brief = $brief;
+    }
+    
+    /**
+     * Returns the tips
+     *
+     * @return string $tips
+     */
+    public function getTips()
+    {
+        return $this->tips;
+    }
+
+    /**
+     * Sets the tips
+     *
+     * @param string $tips
+     * @return void
+     */
+    public function setTips($tips)
+    {
+        $this->tips = $tips;
     }
 
     /**

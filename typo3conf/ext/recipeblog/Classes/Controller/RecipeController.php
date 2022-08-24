@@ -139,17 +139,54 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     public function showAction(\ARM\Recipeblog\Domain\Model\Recipe $recipe)
     {
         $pageUid = $recipe->getPageuid();
+        $tagStr = $recipe->getCategory()->getTitle();
+        $tags = $recipe->getTags();
+        if (count($tags) > 0) {
+           foreach($tags as $tag) {
+               $tagStr .= ','.$tag->getTag();
+           }
+        }
+        
+        /**
+         * @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer
+         */
+        $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+        $pageRenderer->addHeaderData('<meta name="abstract" content="Recipe of '. $recipe->getTitle() .'">');
+        $pageRenderer->addHeaderData('<meta name=”description” content=”'. $recipe->getTitle() .': ' .$recipe->getBrief() .'" />');
+        $pageRenderer->addHeaderData('<meta name=”keywords” content=”'. $tagStr .'" />');
         
         if ($pageUid > 0) {
             $link = $this->uriBuilder->setCreateAbsoluteUri(TRUE)
                     ->setUseCacheHash(FALSE)
                     ->setTargetPageUid($pageUid)
                     ->build();
-           /**
-            * @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer
-            */
-            $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+           
             $pageRenderer->addHeaderData('<link rel="canonical" href="'.$link.'" />');
+            
+        }
+        $pageRenderer->addHeaderData('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1286748015534916",
+          enable_page_level_ads: true
+     });
+</script>');
+        $pageRenderer->addHeaderData('<meta property="og:title" content="'.$recipe->getTitle().'">');
+        $pageRenderer->addHeaderData('<meta property="og:type" content="article">');
+        $pageRenderer->addHeaderData('<meta property="og:url" content="'.$link.'">');
+        $pageRenderer->addHeaderData('<meta property="og:site_name" content="salmathechef">');
+        $pageRenderer->addHeaderData('<meta property="og:description" content="' . str_replace(array("/", '"', "'", "@") , '', strip_tags($recipe->getTitle().'. '.$recipe->getBrief())) .'">');
+        $pageRenderer->addHeaderData('<meta property="twitter:title" content="'.$recipe->getTitle().'">');
+        $pageRenderer->addHeaderData('<meta property="twitter:card" content="'.$recipe->getTitle().'">');
+        $pageRenderer->addHeaderData('<meta property="twitter:site" content="@salmathechef">');
+        $pageRenderer->addHeaderData('<meta property="twitter:description" content="'. str_replace(array("/", '"', "'", "@") , '', strip_tags($recipe->getTitle().'. '.$recipe->getBrief())) .'">');
+        $file = $recipe->getImage();
+        if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
+            $fileResourceReference = $file->getOriginalResource();
+            if (!$fileResourceReference instanceof \TYPO3\CMS\Core\Resource\FileReference) {
+                $fileResourceReference = new \TYPO3\CMS\Core\Resource\FileReference(array('uid_local' => $file->getUid()));
+            }
+            $pageRenderer->addHeaderData('<meta property="og:image" content="' . $fileResourceReference->getPublicUrl() .'">');
+            $pageRenderer->addHeaderData('<meta property="twitter:image" content="'. $fileResourceReference->getPublicUrl() .'">'); 
         }
         
         $views = $recipe->getViews();
@@ -200,8 +237,36 @@ class RecipeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
          * @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer
          */
         $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+        $pageRenderer->addHeaderData('<meta name="abstract" content="Recipe of '. $recipe->getTitle() .'">');
         $pageRenderer->addHeaderData('<meta name=”description” content=”'. $recipe->getTitle() .': ' .$recipe->getBrief() .'" />');
         $pageRenderer->addHeaderData('<meta name=”keywords” content=”'. $tagStr .'" />');
+        $pageRenderer->addHeaderData('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1286748015534916",
+          enable_page_level_ads: true
+     });
+</script>');
+         
+       
+        $link =  $this->uriBuilder->setTargetPageUid($GLOBALS['TSFE']->id)->build();
+        $pageRenderer->addHeaderData('<meta property="og:title" content="'.$recipe->getTitle().'">');
+        $pageRenderer->addHeaderData('<meta property="og:type" content="article">');
+        $pageRenderer->addHeaderData('<meta property="og:url" content="'.$link.'">');
+        $pageRenderer->addHeaderData('<meta property="og:site_name" content="salmathechef">');
+        $pageRenderer->addHeaderData('<meta property="og:description" content="' . str_replace(array("/", '"', "'", "@") , '', strip_tags($recipe->getTitle().'. '.$recipe->getBrief())) .'">');
+        $pageRenderer->addHeaderData('<meta property="twitter:title" content="'.$recipe->getTitle().'">');
+        $pageRenderer->addHeaderData('<meta property="twitter:card" content="'.$recipe->getTitle().'">');
+        $pageRenderer->addHeaderData('<meta property="twitter:site" content="@salmathechef">');
+        $pageRenderer->addHeaderData('<meta property="twitter:description" content="'. str_replace(array("/", '"', "'", "@") , '', strip_tags($recipe->getTitle().'. '.$recipe->getBrief())) .'">');
+        $file = $recipe->getImage();
+        if ($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
+            $fileResourceReference = $file->getOriginalResource();
+            if (!$fileResourceReference instanceof \TYPO3\CMS\Core\Resource\FileReference) {
+                $fileResourceReference = new \TYPO3\CMS\Core\Resource\FileReference(array('uid_local' => $file->getUid()));
+            }
+            $pageRenderer->addHeaderData('<meta property="og:image" content="' . $fileResourceReference->getPublicUrl() .'">');
+            $pageRenderer->addHeaderData('<meta property="twitter:image" content="'. $fileResourceReference->getPublicUrl() .'">'); 
+        }
         
         $this->view->assign('recipe', $recipe);
         $this->view->assign('relatedrecipes', $relatedrecipes);

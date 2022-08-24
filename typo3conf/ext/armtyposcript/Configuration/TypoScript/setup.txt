@@ -1,0 +1,10 @@
+plugin.tx_armtyposcript {
+    view {
+        templateRootPaths.0 = {$plugin.tx_armtyposcript.view.templateRootPath}
+        partialRootPaths.0 = {$plugin.tx_armtyposcript.view.partialRootPath}
+        layoutRootPaths.0 = {$plugin.tx_armtyposcript.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_armtyposcript.persistence.storagePid}
+    }
+}

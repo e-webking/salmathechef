@@ -17,6 +17,7 @@ plugin.tx_recipeblog_list {
         searchPid = 32
         homePid = 3
         recipePid = 40
+        crop = 105
   }
 }
 

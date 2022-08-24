@@ -1,0 +1,26 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+	<basic>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>TypoScript</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <path>
+                        <TCEforms>
+                            <label>Path</label>
+                            <config>
+                                <type>input</type>
+                                <size>30</size>
+                            </config>
+                        </TCEforms>
+                    </path>
+                </el>
+            </ROOT>
+	</basic>	
+    </sheets>		
+</T3DataStructure>

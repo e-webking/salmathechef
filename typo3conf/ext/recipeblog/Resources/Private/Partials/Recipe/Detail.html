@@ -186,11 +186,39 @@
                                         </f:if>
                                     </f:if>
                                     <p><f:format.nl2br>{step.detail}</f:format.nl2br></p>
+                                
                                 </div>
                             </td>
                         </tr>
                     </f:for>
+                    <f:if condition="{recipe.tips}">
+                        <tr class="single-step">
+                            <td></td>
+                            <td class="single-step-description">
+                                <div class="single-step-description-i">
+                                    <p><f:format.nl2br>{recipe.tips}</f:format.nl2br></p>
+                                </div>
+                            </td>
+                        </tr>     
+                    </f:if>
+                    <tr>
+                        <td colspan="2" class="gpluscomment">
+                            <a name="gcomment"></a>
+                            <script src="https://apis.google.com/js/plusone.js"></script>
+                            <div id="comments"></div>
+                            <script>
+                            gapi.comments.render('comments', {
+                                href: window.location,
+                                width: '510',
+                                height: '200',
+                                first_party_property: 'BLOGGER',
+                                view_type: 'FILTERED_POSTMOD'
+                            });
+                            </script>
+                        </td>
+                    </tr>
                 </table>
+                
             </div>
         </div>
         <div class="single-post-about-author">
@@ -210,8 +238,6 @@
                 </div>
                 </div>
             </div>
-            
-            
         </div>
     </div>
 </div>

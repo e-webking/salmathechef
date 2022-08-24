@@ -17,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-	'searchFields' => 'title,pageuid,brief,image,yturl,serves,uploadedon,views,likes,category,menupage,tags,amazonads',
+	'searchFields' => 'title,pageuid,brief,tips,image,yturl,serves,uploadedon,views,likes,category,menupage,tags,amazonads',
         'iconfile' => 'EXT:recipeblog/Resources/Public/Icons/tx_recipeblog_domain_model_recipe.gif'
     ],
     'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, duration, image, yturl, serves, uploadedon, views, likes, category, menupage, tags,ingredients,steps,amazonads',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, tips, duration, image, yturl, serves, uploadedon, views, likes, category, menupage, tags,ingredients,steps,amazonads',
     ],
     'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, duration, image, yturl, serves, uploadedon,--div--;Relations, category,menupage,tags, ingredients, steps,--div--;ADs & Activities,amazonads,views,likes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pageuid, title, brief, duration, image, yturl, serves, uploadedon,--div--;Relations,category,menupage,tips,tags,--div--;Ingredients, ingredients,--div--;Steps, steps,--div--;ADs & Activities,amazonads,views,likes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
 		'sys_language_uid' => [
@@ -63,7 +63,7 @@ return [
                 'type' => 'passthrough',
             ],
         ],
-		't3ver_label' => [
+	't3ver_label' => [
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
@@ -228,6 +228,16 @@ return [
 			    'eval' => 'date',
 			    'default' => time()
 			],
+	    ],
+            'tips'=> [
+	       'exclude' => true,
+	       'label' =>'LLL:EXT:recipeblog/Resources/Private/Language/locallang_db.xlf:tx_recipeblog_domain_model_recipe.tips',
+	       'config' => [
+			    'type' => 'text',
+			    'cols' => 40,
+                            'rows' => 5,
+			    'eval' => 'trim'
+			]
 	    ],
 	   'views' => [
 	       'exclude' => true,
