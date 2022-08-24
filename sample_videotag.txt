@@ -1,0 +1,44 @@
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Introducing the self-driving bicycle in the Netherlands",
+      "description": "This spring, Google is introducing the self-driving bicycle in Amsterdam, the world's premier cycling city. The Dutch cycle more than any other nation in the world, almost 900 kilometres per year per person, amounting to over 15 billion kilometres annually. The self-driving bicycle enables safe navigation through the city for Amsterdam residents, and furthers Google's ambition to improve urban mobility with technology. Google Netherlands takes enormous pride in the fact that a Dutch team worked on this innovation that will have great impact in their home country.",
+      "thumbnailUrl": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "uploadDate": "2016-03-31T08:00:00+08:00",
+      "duration": "PT1M54S",
+      "contentUrl": "https://www.example.com/video/123/file.mp4",
+      "embedUrl": "https://www.example.com/embed/123",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": { "@type": "WatchAction" },
+        "userInteractionCount": 5647018
+      },
+      "regionsAllowed": "US,NL"
+    }
+    </script>
+
+======================
+<html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+<head>
+  <title itemprop="name">Introducing the self-driving bicycle in the Netherlands</title>
+</head>
+<body>
+  <meta itemprop="uploadDate" content="2016-03-31T08:00:00+08:00" />
+  <meta itemprop="duration" content="PT1M54S" />
+  <p itemprop="description">This spring, Google is introducing the self-driving bicycle in Amsterdam, the world's premier cycling city. The Dutch cycle more than any other nation in the world, almost 900 kilometres per year per person, amounting to over 15 billion kilometres annually. The self-driving bicycle enables safe navigation through the city for Amsterdam residents, and furthers Google's ambition to improve urban mobility with technology. Google Netherlands takes enormous pride in the fact that a Dutch team worked on this innovation that will have great impact in their home country.</p>
+  <div itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
+    <meta itemprop="userInteractionCount" content="5647018" />
+    <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" />
+  </div>
+  <link itemprop="embedUrl" href="https://www.example.com/embed/123" />
+  <meta itemprop="contentUrl" content="https://www.example.com/video/123/file.mp4" />
+  <meta itemprop="regionsAllowed" content="AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CW,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH,ER,ES,ET,FI,FJ,FK,FM,FO,FR,GA,GB,GD,GE,GF,GG,GH,GI,GL,GM,GN,GP,GQ,GR,GS,GT,GU,GW,GY,HK,HM,HN,HR,HT,HU,ID,IE,IL,IM,IN,IO,IQ,IR,IS,IT,JE,JM,JO,JP,KE,KG,KH,KI,KM,KN,KP,KR,KW,KY,KZ,LA,LB,LC,LI,LK,LR,LS,LT,LU,LV,LY,MA,MC,MD,ME,MF,MG,MH,MK,ML,MM,MN,MO,MP,MQ,MR,MS,MT,MU,MV,MW,MX,MY,MZ,NA,NC,NE,NF,NG,NI,NL,NO,NP,NR,NU,NZ,OM,PA,PE,PF,PG,PH,PK,PL,PM,PN,PR,PS,PT,PW,PY,QA,RE,RO,RS,RU,RW,SA,SB,SC,SD,SE,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SR,SS,ST,SV,SX,SY,SZ,TC,TD,TF,TG,TH,TJ,TK,TL,TM,TN,TO,TR,TT,TV,TW,TZ,UA,UG,UM,US,UY,UZ,VA,VC,VE,VG,VI,VN,VU,WF,WS,YE,YT,ZA,ZM,ZW">
+   
+  <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+</body>
+</html>
